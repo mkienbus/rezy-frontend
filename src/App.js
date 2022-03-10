@@ -1,23 +1,37 @@
 import './App.css';
+import React from 'react';
+//set up with Redux
+//import {useEffect, useState} from 'react';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  //set up with Redux
+
+  //const [user, setUser] = useState(null)
+
+  //automatic login
+  // useEffect(() => {
+  //   fetch('/me').then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => setUser(user));
+  //     }
+  //   })
+  // }, []);
+
+  // // function handleLogoutClick(){
+  // //   fetch('/logout', {
+  // //     method: 'DELETE'
+  // //   })
+  // //     .then(r => setUser(null))
+  // // }
+
+  // if (!user) return <LoginForm setUser = {setUser}/>
+
+    return (
+      <div className="App">
+        
+      </div>
+    );
 }
 
 export default App;
