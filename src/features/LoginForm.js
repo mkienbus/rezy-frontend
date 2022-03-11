@@ -9,15 +9,37 @@ function LoginForm(){
 
     const dispatch = useDispatch()
 
-    function handleClick(){
+    function handleSubmit(){
         dispatch(loginUser())
         console.log("clicked")
     }
 
     return(
-       <div>
-           <button onClick = {handleClick}>Click</button>
-       </div>
+        <>
+        <div id = "welcomeContainer">
+            <h1 id="welcome">Welcome to Rezy</h1>
+            <div id = "login">
+                <h4>Login to your account</h4>
+                <form onSubmit = {handleSubmit}>
+                    {/* {error ? <span>{error}</span> : <span></span>} */}
+                    <br></br>
+                    <label>Username:</label>
+                    <input 
+                    type = "text" 
+                    id = "username" />
+                    <br></br>
+                    {/* <label>Password: </label>
+                    <input
+                    type = "password"
+                    id = "password1"
+                    value = {password}/> */}
+                    <button type = "submit" >Login</button>
+                </form>
+                <h4>Need to create an account?</h4>
+                {/* <SignUpForm setUser = {setUser}/> */}
+            </div>
+        </div>
+        </>
     )
 }
 
