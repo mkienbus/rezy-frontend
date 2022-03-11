@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 //import { useSelector, useDispatch } from './react-redux'
 import { loginUser, logoutUser } from './features/userSlice'
-import LoginForm from './components/LoginForm';
+import LoginForm from './features/LoginForm';
 
 
 //set up with Redux
