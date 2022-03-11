@@ -4,8 +4,8 @@ const initialState = {
     value: "",
   }
 
-  export const user = createSlice({
-    name: 'userSlice',
+  export const userSlice = createSlice({
+    name: 'userStatus',
     initialState,
     reducers: {
       loginUser: (state) => {
