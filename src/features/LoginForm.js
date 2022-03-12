@@ -1,17 +1,38 @@
 import React from "react";
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { loginUser } from './userSlice'
+import { loginUser } from './userSlice';
+import { logoutUser } from './userSlice';
 
 function LoginForm(){
+    //fetch to /login route, method POST to create a user session existing on login
+
     const userState = useSelector(state => state)
     console.log(userState)
 
     const dispatch = useDispatch()
 
-    function handleSubmit(){
-        dispatch(loginUser())
+    function handleSubmit(e){
+        e.preventDefault()
+        //dispatch(loginUser(e))
         console.log("clicked")
+        fetch('/login',{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                //username
+                // password
+            })
+        }).then(r => {
+            if(r.ok){
+            r.json().then(user => dispatch(loginUser(user)))
+            }
+            // else {
+            //     r.json().then(error => setError(error.error))
+            // }
+        })
     }
 
     return(
