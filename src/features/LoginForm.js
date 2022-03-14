@@ -1,33 +1,34 @@
 import React from "react";
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import { useState } from "react";
 import { loginUser } from './userSlice';
-import { logoutUser } from './userSlice';
+//import { logoutUser } from './userSlice';
 
 function LoginForm(){
     //fetch to /login route, method POST to create a user session existing on login
+    const [username, setUsername] = useState("")
 
-    const userState = useSelector(state => state)
-    console.log(userState)
+    const userState = useSelector((state) => state.user.username)
 
     const dispatch = useDispatch()
 
     function handleSubmit(e){
         e.preventDefault()
         //dispatch(loginUser(e))
-        console.log("clicked")
         fetch('/login',{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                //username
-                // password
+                username
             })
         }).then(r => {
             if(r.ok){
-            r.json().then(user => dispatch(loginUser(user)))
+                console.log(username)
+            r.json().then(dispatch(loginUser(username)))
+                console.log(userState)
             }
             // else {
             //     r.json().then(error => setError(error.error))
@@ -47,13 +48,15 @@ function LoginForm(){
                     <label>Username:</label>
                     <input 
                     type = "text" 
-                    id = "username" />
+                    id = "username"
+                    value = {username}
+                    onChange = {e => setUsername(e.target.value)}/>
                     <br></br>
                     {/* <label>Password: </label>
                     <input
                     type = "password"
-                    id = "password1"
-                    value = {password}/> */}
+                    value = {password}/>
+                    onChange = {e => setPassword(e.target.value)} */}
                     <button type = "submit" >Login</button>
                 </form>
                 <h4>Need to create an account?</h4>

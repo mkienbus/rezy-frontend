@@ -1,8 +1,8 @@
 {
+  "proxy": "http://localhost:3000",
   "name": "online-restaurant-frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3000",
   "engines": {
     "node": "16.x"
   },
