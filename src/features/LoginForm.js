@@ -8,6 +8,8 @@ import { loginUser } from './userSlice';
 function LoginForm(){
     //fetch to /login route, method POST to create a user session existing on login
     const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    const [error, setError] = useState("")
 
     const userState = useSelector((state) => state.user.username)
 
@@ -15,24 +17,23 @@ function LoginForm(){
 
     function handleSubmit(e){
         e.preventDefault()
-        //dispatch(loginUser(e))
         fetch('/login',{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                username
+                username,
+                password
             })
         }).then(r => {
             if(r.ok){
                 console.log(username)
             r.json().then(dispatch(loginUser(username)))
-                console.log(userState)
             }
-            // else {
-            //     r.json().then(error => setError(error.error))
-            // }
+            else {
+                r.json().then(error => setError(error.error))
+            }
         })
     }
 
@@ -43,7 +44,7 @@ function LoginForm(){
             <div id = "login">
                 <h4>Login to your account</h4>
                 <form onSubmit = {handleSubmit}>
-                    {/* {error ? <span>{error}</span> : <span></span>} */}
+                    {error ? <span>{error}</span> : <span></span>}
                     <br></br>
                     <label>Username:</label>
                     <input 
@@ -52,11 +53,11 @@ function LoginForm(){
                     value = {username}
                     onChange = {e => setUsername(e.target.value)}/>
                     <br></br>
-                    {/* <label>Password: </label>
+                    <label>Password: </label>
                     <input
                     type = "password"
-                    value = {password}/>
-                    onChange = {e => setPassword(e.target.value)} */}
+                    value = {password}
+                    onChange = {e => setPassword(e.target.value)}/>
                     <button type = "submit" >Login</button>
                 </form>
                 <h4>Need to create an account?</h4>
