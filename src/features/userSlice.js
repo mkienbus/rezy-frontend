@@ -10,7 +10,6 @@ const initialState = {
     initialState: initialState,
     reducers: {
       loginUser: (state, action) => {
-        //console.log(state.user.username)
         state.username = action.payload
       },
       logoutUser: (state) => {

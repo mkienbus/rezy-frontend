@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useState } from "react";
 import { loginUser } from './userSlice';
 //import { logoutUser } from './userSlice';
+import SignUpForm from "./SignupForm";
 
 function LoginForm(){
     //fetch to /login route, method POST to create a user session existing on login
@@ -11,7 +12,7 @@ function LoginForm(){
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
 
-    const userState = useSelector((state) => state.user.username)
+    //const userState = useSelector((state) => state.user.username)
 
     const dispatch = useDispatch()
 
@@ -61,7 +62,7 @@ function LoginForm(){
                     <button type = "submit" >Login</button>
                 </form>
                 <h4>Need to create an account?</h4>
-                {/* <SignUpForm setUser = {setUser}/> */}
+                <SignUpForm />
             </div>
         </div>
         </>
