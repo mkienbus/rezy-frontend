@@ -7,7 +7,7 @@ import { logoutUser } from './features/userSlice';
 
 
 function App() {
-  const userState = useSelector((state) => console.log(state.user.username))
+  const userState = useSelector((state) => state.user.username)
   const dispatch = useDispatch()
 
   //can i just use userState in Redux instead of fetch call to backend?
@@ -30,7 +30,7 @@ function App() {
   }
 
   //not sure if this is working right
-  if (userState === "") return <LoginForm />
+  if (!userState) return <LoginForm />
 
     return (
       <div className="App">
