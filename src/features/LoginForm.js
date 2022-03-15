@@ -29,7 +29,6 @@ function LoginForm(){
             })
         }).then(r => {
             if(r.ok){
-                console.log(username)
             r.json().then(dispatch(loginUser(username)))
             }
             else {
