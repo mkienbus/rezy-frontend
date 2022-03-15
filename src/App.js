@@ -1,9 +1,9 @@
 import './App.css';
 import React from 'react';
-//import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import LoginForm from './features/LoginForm';
-import { logoutUser } from './features/userSlice';
+import { loginUser, logoutUser } from './features/userSlice';
 
 
 function App() {
@@ -15,12 +15,8 @@ function App() {
   //const [user, setUser] = useState("")
 
   // useEffect(() => {
-  //   fetch('/me').then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((userState) = setUser(userState));
-  //     }
-  //   })
-  // }, []);
+    
+  // }, [userState]);
 
   function handleLogoutClick(){
     fetch('/logout', {
@@ -30,7 +26,7 @@ function App() {
   }
 
   //not sure if this is working right
-  if (!userState) return <LoginForm />
+  // if (!userState) return <LoginForm />
 
     return (
       <div className="App">

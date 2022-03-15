@@ -29,7 +29,7 @@ function LoginForm(){
             })
         }).then(r => {
             if(r.ok){
-            r.json().then(dispatch(loginUser(username)))
+            r.json().then(dispatch(loginUser(username))).then(setUsername("")).then(setPassword(""))
             }
             else {
                 r.json().then(error => setError(error.error))
