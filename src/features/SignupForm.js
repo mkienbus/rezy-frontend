@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { loginUser } from './userSlice';
+//import { loginUser } from './userSlice';
 //import { useSelector, useDispatch } from 'react-redux';
 
 function SignUpForm({setUser}){
