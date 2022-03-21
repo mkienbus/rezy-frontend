@@ -6,7 +6,7 @@ import { loginUser } from './userSlice';
 //import { logoutUser } from './userSlice';
 import SignUpForm from "./SignupForm";
 
-function LoginForm(){
+function LoginForm({setUser}){
     //fetch to /login route, method POST to create a user session existing on login
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -29,13 +29,14 @@ function LoginForm(){
             })
         }).then(r => {
             if(r.ok){
-            r.json().then(dispatch(loginUser(username))).then(setUsername("")).then(setPassword(""))
+                r.json().then(user => setUser(user)).then(setUsername('')).then(setPassword(''))
             }
             else {
                 r.json().then(error => setError(error.error))
             }
         })
     }
+
 
     return(
         <>
