@@ -3,8 +3,7 @@ import { restaurantReducer } from "./features/restaurantSlice";
 import { userReducer } from './features/userSlice';
 
 const store = configureStore({
-    reducer: userReducer,
-    reducer: restaurantReducer
+    reducer: userReducer, restaurantReducer
 })
 
 
