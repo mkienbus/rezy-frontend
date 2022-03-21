@@ -1,19 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-// First, create the thunk
-  function createAsyncThunk(){
-  // 'users/fetchByIdStatus',
-  // async (userId, thunkAPI) => {
-  //   const response = await userAPI.fetchById(userId)
-  //   return response.data
-  // }
-
-    fetch('/me').then((r) => {
-      if (r.ok) {
-        r.json().then((loginUser(r)));
-      }
-    })}
-
 const initialState = {
     username: null,
   }

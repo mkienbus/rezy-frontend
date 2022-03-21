@@ -10,13 +10,16 @@ function App() {
   const userState = useSelector((state) => state.user.username)
   const dispatch = useDispatch()
 
-  //can i just use userState in Redux instead of fetch call to backend?
 
-  //const [user, setUser] = useState("")
+  useEffect(() => {
+    fetch('/me').then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    })
+  }, []);
 
-  // useEffect(() => {
-    
-  // }, [userState]);
+  
 
   function handleLogoutClick(){
     fetch('/logout', {
@@ -25,7 +28,6 @@ function App() {
       .then(r => dispatch(logoutUser))
   }
 
-  //not sure if this is working right
   // if (!userState) return <LoginForm />
 
     return (
