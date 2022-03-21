@@ -3,15 +3,14 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import Reservations from './features/Reservations';
 import LoginForm from './features/LoginForm';
-//import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 //import { loginUser, logoutUser } from './features/userSlice';
 
 
 function App() {
   //const userState = useSelector((state) => state.user.username)
-  //const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const [user, setUser] = useState(null)
-
 
   useEffect(() => {
     fetch('/me').then((r) => {
@@ -20,7 +19,6 @@ function App() {
       }
     })
   }, []);
-
   
 
   function handleLogoutClick(){
@@ -29,6 +27,8 @@ function App() {
     })
       .then(r => setUser(null))
   }
+
+
 
   if (!user) return <LoginForm setUser = {setUser}/>
 
