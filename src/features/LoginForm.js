@@ -62,7 +62,7 @@ function LoginForm({setUser}){
                     <button type = "submit" >Login</button>
                 </form>
                 <h4>Need to create an account?</h4>
-                <SignUpForm />
+                <SignUpForm setUser = {setUser}/>
             </div>
         </div>
         </>
