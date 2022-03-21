@@ -1,14 +1,16 @@
 import './App.css';
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import Reservations from './features/Reservations';
 import LoginForm from './features/LoginForm';
-import { loginUser, logoutUser } from './features/userSlice';
+//import { useSelector, useDispatch } from 'react-redux';
+//import { loginUser, logoutUser } from './features/userSlice';
 
 
 function App() {
-  const userState = useSelector((state) => state.user.username)
-  const dispatch = useDispatch()
+  //const userState = useSelector((state) => state.user.username)
+  //const dispatch = useDispatch()
+  const [user, setUser] = useState(null)
 
 
   useEffect(() => {
@@ -25,15 +27,16 @@ function App() {
     fetch('/logout', {
       method: 'DELETE'
     })
-      .then(r => dispatch(logoutUser))
+      .then(r => setUser(null))
   }
 
-  // if (!userState) return <LoginForm />
+  if (!user) return <LoginForm setUser = {setUser}/>
 
     return (
       <div className="App">
         <h1>App</h1>
-        <LoginForm />
+        {/* <LoginForm /> */}
+        <Reservations />
         <button id = "logout" onClick = {handleLogoutClick}>Logout</button>
       </div>
     );
