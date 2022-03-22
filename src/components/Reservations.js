@@ -12,9 +12,12 @@ function Reservations(){
     return(
         <>
             <div>
+                
                 <h3>Select a restaurant to make a reservation:</h3>
-                {data?.map((data) => 
-                <RestaurantCard key = {data.id} data = {data} error = {error} isLoading = {isLoading} isSuccess = {isSuccess}/>
+                {isLoading && <h2>...loading</h2>}
+                {error && <h2>Something went wrong</h2>}
+                {data?.map((d) => 
+                <RestaurantCard key = {d.id} restaurant = {d} isSuccess = {isSuccess}/>
                 )}
             </div>
         </>

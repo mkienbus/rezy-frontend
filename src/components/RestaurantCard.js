@@ -1,10 +1,13 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-function RestaurantCard({data, error, isLoading, isSuccess}){
+function RestaurantCard({restaurant, error, isLoading, isSuccess}){
 
-    //render each restaurant
-    //button
+    function handleReservationClick(){
+
+    }
+
+
     return(
         <>
             <div>
@@ -12,9 +15,11 @@ function RestaurantCard({data, error, isLoading, isSuccess}){
                 {error && <h2>Something went wrong</h2>}
                 {isSuccess &&
                 <div>
-                    {data.name}
+                    {restaurant.name}
                     <br></br>
-                    {data.address}
+                    {restaurant.address}
+                    <br></br>
+                    <button onClick = {() => handleReservationClick()}>Make reservation</button>
                     <br></br><br></br>
                 </div>}
             </div>

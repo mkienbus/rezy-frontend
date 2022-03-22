@@ -12,10 +12,6 @@ function LoginForm({setUser}){
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
 
-    //const userState = useSelector((state) => state.user.username)
-
-    //const dispatch = useDispatch()
-
     function handleSubmit(e){
         e.preventDefault()
         fetch('/login',{

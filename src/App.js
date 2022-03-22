@@ -34,9 +34,9 @@ function App() {
 
     return (
       <div className="App">
+        <button id = "logout" onClick = {handleLogoutClick}>Logout</button>
         <h1>Rezy</h1>
         <Reservations />
-        <button id = "logout" onClick = {handleLogoutClick}>Logout</button>
       </div>
     );
 }
