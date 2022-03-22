@@ -1,19 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
-    username: [],
-  }
+// const initialState = {
+//     reservation: [],
+//   }
 
   export const reservationReducer = createSlice({
-    name: 'reservations',
-    initialState: initialState,
+    name: 'reservation',
+    initialState: { 
+        value: 1
+    },
     reducers: {
         showReservations: (state, action) => {
             return action.payload
       },
         makeReservation:(state, action) => {
             return [...state, action.payload]
-        }
+        },
     },
   })
   

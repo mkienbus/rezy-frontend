@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { useEffect, useState } from 'react';
-import Reservations from './components/Reservations';
+import Restaurants from './components/Restaurants';
 import LoginForm from './components/LoginForm';
 import { useSelector, useDispatch } from 'react-redux';
 //import { loginUser, logoutUser } from './features/userSlice';
@@ -36,7 +36,7 @@ function App() {
       <div className="App">
         <button id = "logout" onClick = {handleLogoutClick}>Logout</button>
         <h1>Rezy</h1>
-        <Reservations />
+        <Restaurants />
       </div>
     );
 }

@@ -1,10 +1,12 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { showReservations } from "../slices/reservationSlice";
 
 function RestaurantCard({restaurant, error, isLoading, isSuccess}){
+    console.log(restaurant)
 
     function handleReservationClick(){
-
+        console.log('clicked')
     }
 
 
@@ -19,7 +21,7 @@ function RestaurantCard({restaurant, error, isLoading, isSuccess}){
                     <br></br>
                     {restaurant.address}
                     <br></br>
-                    <button onClick = {() => handleReservationClick()}>Make reservation</button>
+                    <button onClick ={handleReservationClick}>Make reservation</button>
                     <br></br><br></br>
                 </div>}
             </div>

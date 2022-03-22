@@ -5,9 +5,10 @@ import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { useGetAllRestaurantsQuery } from "../slices/restaurantSlice";
 
-function Reservations(){
+function Restaurants(){
 
     const { data, error, isLoading, isSuccess }= useGetAllRestaurantsQuery();
+    //console.log(data)
 
     return(
         <>
@@ -26,4 +27,4 @@ function Reservations(){
 }
 
 
-export default Reservations;
+export default Restaurants;
