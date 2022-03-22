@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 //import { userReducer } from './features/userSlice';
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
-import { restaurantApi } from "./features/restaurantSlice";
+import { restaurantApi } from "./slices/restaurantSlice";
 
 // const rootReducer = combineReducers({
 //     //user: userReducer,

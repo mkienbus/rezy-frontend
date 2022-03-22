@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
 import { useEffect, useState } from 'react';
-import Reservations from './features/Reservations';
-import LoginForm from './features/LoginForm';
+import Reservations from './components/Reservations';
+import LoginForm from './components/LoginForm';
 import { useSelector, useDispatch } from 'react-redux';
 //import { loginUser, logoutUser } from './features/userSlice';
 
@@ -34,8 +34,7 @@ function App() {
 
     return (
       <div className="App">
-        <h1>App</h1>
-        {/* <LoginForm /> */}
+        <h1>Rezy</h1>
         <Reservations />
         <button id = "logout" onClick = {handleLogoutClick}>Logout</button>
       </div>
