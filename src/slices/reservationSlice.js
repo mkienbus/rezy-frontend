@@ -7,11 +7,11 @@ import { createSlice } from '@reduxjs/toolkit'
   export const reservationReducer = createSlice({
     name: 'reservation',
     initialState: { 
-        value: 1
+        value: []
     },
     reducers: {
-        showReservations: (state, action) => {
-            return action.payload
+        showReservations: (state) => {
+            return state
       },
         makeReservation:(state, action) => {
             return [...state, action.payload]
@@ -20,6 +20,6 @@ import { createSlice } from '@reduxjs/toolkit'
   })
   
   // Action creators are generated for each case reducer function
-  export const { showReservations } = reservationReducer.actions
+  export const { showReservations, makeReservation } = reservationReducer.actions
   
   export default reservationReducer.reducer

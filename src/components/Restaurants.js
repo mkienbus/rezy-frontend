@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
-//import { fetchRestaurants, restaurantList } from "./restaurantSlice";
 import { useSelector, useDispatch } from 'react-redux';
 import { useGetAllRestaurantsQuery } from "../slices/restaurantSlice";
+import { showReservations } from "../slices/reservationSlice";
 
 function Restaurants(){
 
-    const { data, error, isLoading, isSuccess }= useGetAllRestaurantsQuery();
+    const { data, error, isLoading, isSuccess } = useGetAllRestaurantsQuery();
     //console.log(data)
 
     return(
