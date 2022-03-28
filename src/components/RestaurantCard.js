@@ -1,9 +1,14 @@
 import React from "react";
-import Button from "./Button"
+import ReservationModal from "./ReservationModal";
+import Button from '@mui/material/Button';
 
 function RestaurantCard({restaurant, error, isLoading, isSuccess}){
-    console.log(restaurant)
+    //console.log(restaurant)
 
+function handleReservation(){
+
+
+}
 
     return(
         <>
@@ -16,7 +21,7 @@ function RestaurantCard({restaurant, error, isLoading, isSuccess}){
                     <br></br>
                     {restaurant.address}
                     <br></br>
-                    <Button variant = "contained">Make a reservation</Button>
+                    <Button size = "small" variant = "contained" onClick = {handleReservation}>Make a reservation at {restaurant.name}</Button>
                     <br></br><br></br>
                 </div>}
             </div>

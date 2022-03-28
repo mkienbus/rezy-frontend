@@ -1,14 +1,14 @@
 import React from "react";
 
-function Button(){
+function ReservationModal(){
     //install MUI?
     return(
         <>
             <div>
-                <h4>Button</h4>
+
             </div>
         </>
     )
 }
 
-export default Button;
+export default ReservationModal;
