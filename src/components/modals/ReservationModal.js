@@ -1,13 +1,11 @@
-import React from 'react';
-import { useState } from 'react';
-import ReservationChildModal from './ReservationChildModal';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+import React, { useState } from 'react';
+import { Box, Button, Modal }from '@mui/material';
 import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+import ReservationChildModal from './ReservationChildModal';
+import ReservationCalendar from '../Calendar';
 
-import { restaurantApi } from '../../slices/restaurantSlice';
-//import { restaurantApi } from '../slices/restaurantSlice';
+//need to add backend response
+//nested modal with dates and times
 
 const style = {
     position: 'absolute',
@@ -22,12 +20,6 @@ const style = {
     px: 4,
     pb: 3,
   };
-
-//do I need dialog initiated?
-//need to add backend response
-//nested modal with dates and times
-
-
   
 function ReservationModal({restaurant}) {
     const [open, setOpen] = useState(false);
@@ -40,7 +32,7 @@ function ReservationModal({restaurant}) {
   
     return (
       <div>
-        <Button onClick={handleOpen}>Make a reservation at {restaurant.name}</Button>
+        <Button size = "small" variant = "contained" onClick={handleOpen}>Make a reservation at {restaurant.name}</Button>
         <Modal
           open={open}
           onClose={handleClose}
@@ -48,10 +40,11 @@ function ReservationModal({restaurant}) {
           aria-describedby="parent-modal-description"
         >
           <Box sx={{ ...style, width: 400 }}>
-            <h2 id="parent-modal-title">Text in a modal</h2>
+            <h2 id="parent-modal-title">Select a date to make a reservation:</h2>
             <p id="parent-modal-description">
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            <ReservationCalendar />
             </p>
+            <Button onClick = {handleClose}>Close window</Button>
             <ReservationChildModal style = {style}/>
           </Box>
         </Modal>
