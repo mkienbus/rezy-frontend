@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 function App() {
   //const userState = useSelector((state) => state.user.username)
-  const dispatch = useDispatch()
+  //const dispatch = useDispatch()
   const [user, setUser] = useState(null)
 
   useEffect(() => {
