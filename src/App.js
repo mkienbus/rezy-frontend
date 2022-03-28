@@ -1,6 +1,8 @@
 import './App.css';
 import React from 'react';
 import { useEffect, useState } from 'react';
+import { Button } from '@mui/material';
+
 import Restaurants from './components/Restaurants';
 import LoginForm from './components/LoginForm';
 import { useSelector, useDispatch } from 'react-redux';
@@ -34,7 +36,7 @@ function App() {
 
     return (
       <div className="App">
-        <button id = "logout" onClick = {handleLogoutClick}>Logout</button>
+        <Button onClick = {handleLogoutClick} variant = "contained" size = "medium" color = "error">Logout</Button>
         <h1>Rezy</h1>
         <Restaurants />
       </div>

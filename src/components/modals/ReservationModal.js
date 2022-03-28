@@ -41,9 +41,7 @@ function ReservationModal({restaurant}) {
         >
           <Box sx={{ ...style, width: 400 }}>
             <h2 id="parent-modal-title">Select a date to make a reservation:</h2>
-            <p id="parent-modal-description">
             <ReservationCalendar />
-            </p>
             <Button onClick = {handleClose}>Close window</Button>
             <ReservationChildModal style = {style}/>
           </Box>

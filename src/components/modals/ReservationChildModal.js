@@ -15,7 +15,7 @@ function ReservationChildModal({style}) {
   
     return (
       <>
-        <Button onClick={handleOpen}>Open Child Modal</Button>
+        <Button onClick={handleOpen}>confirm date</Button>
         <Modal
           hideBackdrop
           open={open}
@@ -24,11 +24,11 @@ function ReservationChildModal({style}) {
           aria-describedby="child-modal-description"
         >
           <Box sx={{ ...style, width: 200 }}>
-            <h2 id="child-modal-title">Text in a child modal</h2>
+            <h2 id="child-modal-title">Selected date from parent modal</h2>
             <p id="child-modal-description">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                list of radial dials with times
             </p>
-            <Button onClick={handleClose}>Close Child Modal</Button>
+            <Button onClick={handleClose}>Confirm time</Button>
           </Box>
         </Modal>
       </>

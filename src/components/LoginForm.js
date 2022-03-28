@@ -56,7 +56,8 @@ function LoginForm({setUser}){
                     type = "password"
                     value = {password}
                     onChange = {e => setPassword(e.target.value)}/>
-                    <button type = "submit" >Login</button>
+                    <br></br>
+                    <Button type = "submit" variant = "contained" size = "small">Login</Button>
                 </form>
                 <h4>Need to create an account?</h4>
                 <SignUpForm setUser = {setUser}/>

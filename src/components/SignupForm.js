@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Button } from '@mui/material';
 //import { loginUser } from './userSlice';
 //import { useSelector, useDispatch } from 'react-redux';
 
@@ -54,7 +55,10 @@ function SignUpForm({setUser}){
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
                 autoComplete="current-password"
                 />
-                <button>Create</button>
+                <br></br>
+                <Button type = "submit" variant = "contained" size = "small">Create</Button>
+                {/* <button>Create</button> */}
+                <h3>Backend problems if you create with an existing username, check validations?</h3>
             </form>
             </div>
         </>
