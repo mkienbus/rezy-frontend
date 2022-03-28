@@ -1,5 +1,5 @@
 import React from "react";
-import ReservationModal from "./ReservationModal";
+import ReservationModal from "./modals/ReservationModal";
 //import Button from '@mui/material/Button';
 
 function RestaurantCard({restaurant, error, isLoading, isSuccess}){
