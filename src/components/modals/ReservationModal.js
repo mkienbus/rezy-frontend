@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Button, Modal }from '@mui/material';
 import Typography from '@mui/material/Typography';
 import ReservationChildModal from './ReservationChildModal';
-import ReservationCalendar from '../Calendar';
+import ReservationCalendar from '../ReservationCalendar';
 
 //need to add backend response
 //nested modal with dates and times
@@ -23,12 +23,19 @@ const style = {
   
 function ReservationModal({restaurant}) {
     const [open, setOpen] = useState(false);
+    const [clickedDate, setClickedDate] = useState("")
+
     const handleOpen = () => {
       setOpen(true);
     };
     const handleClose = () => {
       setOpen(false);
     };
+
+    function callBackClickedDate(date){
+      // console.log(date)
+      setClickedDate(date)
+    }
   
     return (
       <div>
@@ -41,9 +48,9 @@ function ReservationModal({restaurant}) {
         >
           <Box sx={{ ...style, width: 400 }}>
             <h2 id="parent-modal-title">Select a date to make a reservation:</h2>
-            <ReservationCalendar />
+            <ReservationCalendar callBackClickedDate={callBackClickedDate}/>
             <Button onClick = {handleClose}>Close window</Button>
-            <ReservationChildModal style = {style}/>
+            <ReservationChildModal  clickedDate = {clickedDate} style = {style}/>
           </Box>
         </Modal>
       </div>

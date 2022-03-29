@@ -4,18 +4,21 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
 
-function ReservationChildModal({style}) {
+function ReservationChildModal({style, clickedDate}) {
     const [open, setOpen] = useState(false);
-    const handleOpen = () => {
+    const handleOpen = (date) => {
       setOpen(true);
+      console.log(clickedDate)
     };
     const handleClose = () => {
       setOpen(false);
     };
-  
+
+
+
     return (
       <>
-        <Button onClick={handleOpen}>confirm date</Button>
+        <Button onClick={handleOpen} >confirm date</Button>
         <Modal
           hideBackdrop
           open={open}

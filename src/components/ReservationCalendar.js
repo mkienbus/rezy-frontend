@@ -1,23 +1,22 @@
 import React, { useState } from "react";
+//imported Calendar from tool
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 
 //calendar resource and info on customizing CSS
 //https://blog.logrocket.com/react-calendar-tutorial-build-customize-calendar/
 
-function ReservationCalendar(){
+//exported Component to be rendered by ReservationModal
+function ReservationCalendar({callBackClickedDate}){
     const [date, setDate] = useState(new Date());
 
-    function handleDayClick(){
-        console.log('day clicked')
-        //do i need to pass state 'date' up to ChildModal w/ callback function?
-    }
+    //callback to ReservationModal for date information that was selected
 
     return(
     <>
         <div className='app'>
             <div className='calendar-container'>
-                <Calendar onChange={setDate} onClickDay = {handleDayClick} value={date} />
+                <Calendar onChange={setDate} onClickDay = {callBackClickedDate} value={date} />
             </div>
             <p className='text-center'>
                 <span className='bold'>Selected Date:</span>{' '}
