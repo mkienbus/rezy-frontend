@@ -33,7 +33,6 @@ function ReservationModal({restaurant}) {
     };
 
     function callBackClickedDate(date){
-      // console.log(date)
       setClickedDate(date)
     }
   
