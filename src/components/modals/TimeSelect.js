@@ -6,12 +6,16 @@ import FormControl from '@mui/material/FormControl';
 //Select imported from MUI
 import Select from '@mui/material/Select';
 
-function TimeSelect() {
+function TimeSelect({callBackTime}) {
   const [time, setTime] = useState('');
+  //time state isn't really used, it's passed up through target.value w/ callback
 
+  //callback to ReservationModal component
   const handleChange = (e) => {
     setTime(e.target.value);
+    callBackTime(e.target.value);
   };
+
 
   return (
     <>
@@ -25,12 +29,12 @@ function TimeSelect() {
           label="Time"
           onChange={handleChange}
         >
-          <MenuItem value={1600}>4:00 PM</MenuItem>
-          <MenuItem value={1700}>5:00 PM</MenuItem>
-          <MenuItem value={1800}>6:00 PM</MenuItem>
-          <MenuItem value={1900}>7:00 PM</MenuItem>
-          <MenuItem value={2000}>8:00 PM</MenuItem>
-          <MenuItem value={2100}>9:00 PM</MenuItem>
+          <MenuItem value={"4:00 PM"}>4:00 PM</MenuItem>
+          <MenuItem value={"5:00 PM"}>5:00 PM</MenuItem>
+          <MenuItem value={"6:00 PM"}>6:00 PM</MenuItem>
+          <MenuItem value={"7:00 PM"}>7:00 PM</MenuItem>
+          <MenuItem value={"8:00 PM"}>8:00 PM</MenuItem>
+          <MenuItem value={"9:00 PM"}>9:00 PM</MenuItem>
         </Select>
       </FormControl>
     </Box>

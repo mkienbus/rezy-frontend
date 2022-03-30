@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Box, Button, Modal }from '@mui/material';
-import Typography from '@mui/material/Typography';
 import ReservationChildModal from './ReservationChildModal';
 import ReservationCalendar from '../ReservationCalendar';
 
-//need to add backend response
-//nested modal with dates and times
+//parent component to the nested modal, calendar, and select tools
+//sends callback functions to children, holds state information for them here
 
 const style = {
     position: 'absolute',
@@ -24,6 +23,7 @@ const style = {
 function ReservationModal({restaurant}) {
     const [open, setOpen] = useState(false);
     const [clickedDate, setClickedDate] = useState("")
+    const [time, setTime] = useState("")
 
     const handleOpen = () => {
       setOpen(true);
@@ -32,8 +32,14 @@ function ReservationModal({restaurant}) {
       setOpen(false);
     };
 
-    function callBackClickedDate(date){
-      setClickedDate(date)
+    function callBackClickedDate(dateFromReservationCalendar){
+      setClickedDate(dateFromReservationCalendar)
+      console.log(dateFromReservationCalendar)
+    }
+
+    function callBackTime(timeFromSelect){
+      setTime(timeFromSelect)
+      console.log(timeFromSelect)
     }
   
     return (
@@ -49,7 +55,7 @@ function ReservationModal({restaurant}) {
             <h2 id="parent-modal-title">Select a date to make a reservation:</h2>
             <ReservationCalendar callBackClickedDate={callBackClickedDate}/>
             <Button onClick = {handleClose}>Close window</Button>
-            <ReservationChildModal  clickedDate = {clickedDate} style = {style}/>
+            <ReservationChildModal  callBackTime = {callBackTime} clickedDate = {clickedDate} style = {style}/>
           </Box>
         </Modal>
       </div>
