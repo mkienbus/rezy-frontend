@@ -10,6 +10,7 @@ import 'react-calendar/dist/Calendar.css';
 function ReservationCalendar({callBackClickedDate}){
     const [date, setDate] = useState(new Date());
 
+    //moment library or JS
     //callback to ReservationModal for date information that was selected
 
     return(
@@ -24,7 +25,6 @@ function ReservationCalendar({callBackClickedDate}){
             </p>
         </div>
     </>
-
     )
 }
 
