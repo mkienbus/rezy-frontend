@@ -78,14 +78,6 @@ function ReservationModal({user, restaurant}) {
 
   }
 
-  // .then(r => {
-  //   if(r.ok){
-  //   r.json().then(console.log(r))
-  //   }
-  //   else {
-  //       r.json().then(error => setError(error.error))
-  //   }
-
   
     return (
       <div>

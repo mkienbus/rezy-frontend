@@ -2,7 +2,9 @@ import './App.css';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
+import Nav from './components/Nav';
 import Restaurants from './components/Restaurants';
 import LoginForm from './components/LoginForm';
 //import { useSelector, useDispatch } from 'react-redux';
@@ -34,9 +36,11 @@ function App() {
 
     return (
       <div className="App">
+        <Nav />
         <Button onClick = {handleLogoutClick} variant = "contained" size = "medium" color = "error">Logout</Button>
         <h1>Rezy</h1>
         <Restaurants user = {user}/>
+        <Link to="/about">ABOUT</Link>
       </div>
     );
 }
