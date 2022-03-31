@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Button, Modal }from '@mui/material';
+import { Box, Button, Modal, Alert }from '@mui/material';
 import ReservationChildModal from './ReservationChildModal';
 import ReservationCalendar from '../ReservationCalendar';
 
@@ -32,6 +32,8 @@ function ReservationModal({restaurant}) {
       setOpen(false);
     };
 
+
+    //stretch goal, use redux to save time and date state to avoid all these callback functions
     function callBackClickedDate(dateFromReservationCalendar){
       setClickedDate(dateFromReservationCalendar)
       console.log(dateFromReservationCalendar)
@@ -46,6 +48,7 @@ function ReservationModal({restaurant}) {
       console.log(clickedDate)
       console.log(time)
       setOpen(false)
+      alert(`Your reservation is confirmed for ${restaurant.name} on ${clickedDate} at ${time}!`)
     }
   
     return (

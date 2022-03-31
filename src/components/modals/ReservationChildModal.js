@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Button } from '@mui/material';
+import { Box, Button, Alert } from '@mui/material';
 import TimeSelect from './TimeSelect';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
@@ -38,6 +38,7 @@ function ReservationChildModal({style, clickedDate, callBackTime, handleConfirme
             </p>
             <TimeSelect callBackTime = {callBackTime}/>
             <Button onClick={handleConfirmedTimeAndDate}>Confirm time</Button>
+            {/* find a way to use Alert tool instead of basic alert(``) */}
             <Button onClick = {handleClose}>Close window</Button>
           </Box>
         </Modal>
