@@ -41,6 +41,12 @@ function ReservationModal({restaurant}) {
       setTime(timeFromSelect)
       console.log(timeFromSelect)
     }
+
+    function handleConfirmedTimeAndDate(){
+      console.log(clickedDate)
+      console.log(time)
+      setOpen(false)
+    }
   
     return (
       <div>
@@ -55,7 +61,7 @@ function ReservationModal({restaurant}) {
             <h2 id="parent-modal-title">Select a date to make a reservation:</h2>
             <ReservationCalendar callBackClickedDate={callBackClickedDate}/>
             <Button onClick = {handleClose}>Close window</Button>
-            <ReservationChildModal  callBackTime = {callBackTime} clickedDate = {clickedDate} style = {style}/>
+            <ReservationChildModal  callBackTime = {callBackTime} clickedDate = {clickedDate} handleConfirmedTimeAndDate = {handleConfirmedTimeAndDate} style = {style}/>
           </Box>
         </Modal>
       </div>

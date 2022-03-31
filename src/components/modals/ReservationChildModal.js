@@ -5,11 +5,11 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
 
-function ReservationChildModal({style, clickedDate, callBackTime}) {
+function ReservationChildModal({style, clickedDate, callBackTime, handleConfirmedTimeAndDate}) {
     const [open, setOpen] = useState(false);
 
     function handleOpen(){
-        setOpen(true)
+        setOpen(true);
     }
     function handleClose(){
       setOpen(false);
@@ -37,7 +37,7 @@ function ReservationChildModal({style, clickedDate, callBackTime}) {
             <p id="child-modal-description">
             </p>
             <TimeSelect callBackTime = {callBackTime}/>
-            <Button onClick={handleClose}>Confirm time</Button>
+            <Button onClick={handleConfirmedTimeAndDate}>Confirm time</Button>
             <Button onClick = {handleClose}>Close window</Button>
           </Box>
         </Modal>
