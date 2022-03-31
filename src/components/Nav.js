@@ -6,9 +6,10 @@ function Nav(){
 
     return(
 
-        <div>
-            <Link to="/reservations">RESERVATIONS  </Link>
-        </div>
+        <nav>
+            <Link to = "/">HOME  </Link>
+            <Link to = "/reservations">RESERVATIONS  </Link>
+        </nav>
     )
 }
 

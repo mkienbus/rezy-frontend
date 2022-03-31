@@ -19,8 +19,8 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
           <Route path="/" element={<App />} />
-            <Route path = "reservations" element = {<Reservations />} />
-            <Route path = "about" element = {<About />} />
+          <Route path = "reservations" element = {<Reservations />} />
+          <Route path = "about" element = {<About />} />
       </Routes>
     </BrowserRouter>
   </Provider>,

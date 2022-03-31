@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { Button } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 
 import Nav from './components/Nav';
 import Restaurants from './components/Restaurants';
