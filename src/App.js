@@ -22,7 +22,6 @@ function App() {
     })
   }, []);
   
-
   function handleLogoutClick(){
     fetch('/logout', {
       method: 'DELETE'
@@ -31,14 +30,13 @@ function App() {
   }
 
 
-
   if (!user) return <LoginForm setUser = {setUser}/>
 
     return (
       <div className="App">
         <Button onClick = {handleLogoutClick} variant = "contained" size = "medium" color = "error">Logout</Button>
         <h1>Rezy</h1>
-        <Restaurants />
+        <Restaurants user = {user}/>
       </div>
     );
 }

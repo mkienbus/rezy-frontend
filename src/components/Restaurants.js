@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useGetAllRestaurantsQuery } from "../slices/restaurantSlice";
 import { showReservations } from "../slices/reservationSlice";
 
-function Restaurants(){
+function Restaurants({user}){
 
     const { data, error, isLoading, isSuccess } = useGetAllRestaurantsQuery();
     //console.log(data)
@@ -19,7 +19,7 @@ function Restaurants(){
                 {isLoading && <h2>...loading</h2>}
                 {error && <h2>Something went wrong</h2>}
                 {data?.map((d) => 
-                <RestaurantCard key = {d.id} restaurant = {d} isSuccess = {isSuccess}/>
+                <RestaurantCard key = {d.id} restaurant = {d} isSuccess = {isSuccess} user = {user}/>
                 )}
             </div>
         </>

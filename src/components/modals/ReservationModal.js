@@ -20,10 +20,13 @@ const style = {
     pb: 3,
   };
   
-function ReservationModal({restaurant}) {
+function ReservationModal({user, restaurant}) {
     const [open, setOpen] = useState(false);
     const [clickedDate, setClickedDate] = useState("")
     const [time, setTime] = useState("")
+    const [error, setError] = useState("")
+
+    const reservationDate = `${clickedDate} ${time}`
 
     const handleOpen = () => {
       setOpen(true);
@@ -31,7 +34,6 @@ function ReservationModal({restaurant}) {
     const handleClose = () => {
       setOpen(false);
     };
-
 
     //stretch goal, use redux to save time and date state to avoid all these callback functions
     function callBackClickedDate(dateFromReservationCalendar){
@@ -45,14 +47,49 @@ function ReservationModal({restaurant}) {
     }
 
     function handleConfirmedTimeAndDate(){
-      console.log(clickedDate)
-      console.log(time)
+      console.log(reservationDate)
       setOpen(false)
-      alert(`Your reservation is confirmed for ${restaurant.name} on ${clickedDate} at ${time}!`)
+      postReservation(reservationDate);
     }
+
+    function postReservation(){
+      fetch('/reservations',{
+          method: "POST", 
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            user_id: user.id,
+            restaurant_id: restaurant.id,
+            reservation_date: reservationDate
+          })
+      }).then(r => {
+        if(r.ok){
+        r.json().then(alert(`Your reservation is confirmed for ${restaurant.name} on ${clickedDate} at ${time}!`))
+        }
+        else {
+            r.json().then(error => setError(error.error))
+        }
+      }).then(
+          setClickedDate("")
+      ).then(
+        setTime("")
+      )
+
+  }
+
+  // .then(r => {
+  //   if(r.ok){
+  //   r.json().then(console.log(r))
+  //   }
+  //   else {
+  //       r.json().then(error => setError(error.error))
+  //   }
+
   
     return (
       <div>
+        {error ? <span>{error}</span> : <span></span>}
         <Button size = "small" variant = "contained" onClick={handleOpen}>Make a reservation at {restaurant.name}</Button>
         <Modal
           open={open}
