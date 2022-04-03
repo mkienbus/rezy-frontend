@@ -2,17 +2,18 @@ import React from "react";
 import Nav from "./Nav";
 import { useState, useEffect } from "react"
 
+import ReservationCard from "./ReservationCard";
+
 
 function Reservations(){
-    const [reservationName, setReservationName] = useState([])
+    const [restaurantName, setRestaurantName] = useState([])
     const [reservationDate, setReservationDate] = useState([])
 
     //.map over response 
     useEffect(() => {
-        fetch('/reservations')
-            .then(r => r.json())
+        fetch('/reservations').then((r) => r.json())
             .then((data) => {
-                setReservationName(data.map((d) => d.restaurant.name))
+                setRestaurantName(data.map((d) => d.restaurant.name))
                 setReservationDate(data.map((d) => d.reservation_date))
             })
     },[]);
@@ -20,22 +21,27 @@ function Reservations(){
     return(
         <>
             <Nav />
-            <h3>Reservations</h3>
-            <h4>{reservationName}</h4>
-            <br></br>
-            <h4>{reservationDate}</h4>
+            <h3>Your reservations:</h3>
+            <ReservationCard restaurantName = {restaurantName} reservationDate = {reservationDate}/>
         </>
     )
 }
 
 export default Reservations;
 
-// const GetData = [];
-//   useEffect(() => {
-//     fetch(API_URL)
-//       .then((res) => res.json())
-//       .then((data) => {
-//         GetModesData.push(...data);
-//         setDataState(GetData.map((d) => d.modeName));
-//       });
-//   }, []);
+// {reservationData.map((r) => 
+//     <RestaurantCard restaurant = {r} key = {r.id} user = {user} resetDomRemove = {resetDomRemove} handleEdit = {handleEdit}/>)
+//     }
+
+// var array1 = [1,2,3,4];
+// var array2 = [5,-6,7,8.5];
+
+// const concatArr = (arr1, arr2, sep) => arr1.map(function (num, idx) {
+//   return num.toString().concat(sep,(arr2[idx]).toString())
+// });
+
+// console.log(concatArr(array1,array2,"#"))// ["1#5", "2#-6", "3#7", "4#8.5"]
+
+// const fullnames = names.map((name, index) => {
+//     `${name} ${lastnames[index]}`
+//   });

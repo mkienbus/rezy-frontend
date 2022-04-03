@@ -31,14 +31,3 @@ function handleReservation(){
 }
 
 export default RestaurantCard;
-
-{/* {data?.map(
-                        restaurant => {
-                            return <div className = "data" key = {restaurant.id}>
-                                <span>{restaurant.name}</span>
-                                <br></br>
-                                <span>{restaurant.address}</span>
-                                <br></br><br></br>
-                            </div>
-                        }
-                    )} */}
