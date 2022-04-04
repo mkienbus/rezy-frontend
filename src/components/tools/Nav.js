@@ -7,8 +7,9 @@ function Nav(){
     return(
 
         <nav>
-            <Link to = "/">HOME  </Link>
-            <Link to = "/reservations">RESERVATIONS  </Link>
+            <Link to = "/">HOME  |</Link>
+            {/* <Link to = "/restaurants">  RESTAURANTS  |</Link> */}
+            <Link to = "/reservations">  RESERVATIONS  |</Link>
         </nav>
     )
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import ReservationModal from "../modals/ReservationModal";
-//import Button from '@mui/material/Button';
+import RestaurantGrid from "../table/RestaurantGrid";
 
 function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
 
@@ -11,6 +11,7 @@ function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
                 {error && <h2>Something went wrong</h2>}
                 {isSuccess &&
                 <div>
+                    {/* <RestaurantGrid /> */}
                     {console.log(restaurant)}
                     {restaurant.name}
                     <br></br>

@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import store from './store'
+import store from './store';
 import Reservations from './components/Reservations';
+import Restaurants from './components/Restaurants';
 import App from './App';
 import About from './components/About';
 
@@ -21,6 +22,7 @@ ReactDOM.render(
           <Route path="/" element={<App />} />
           <Route path = "reservations" element = {<Reservations />} />
           <Route path = "about" element = {<About />} />
+          <Route path = "restaurants" element = {<Restaurants />} />
       </Routes>
     </BrowserRouter>
   </Provider>,

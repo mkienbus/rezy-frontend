@@ -1,6 +1,9 @@
 import React from "react";
-import RestaurantCard from "./cards/RestaurantCard";
 import { useGetAllRestaurantsQuery } from "../slices/restaurantSlice";
+
+import RestaurantCard from "./cards/RestaurantCard";
+import Nav from "./tools/Nav";
+
 
 function Restaurants({user}){
 
@@ -10,7 +13,6 @@ function Restaurants({user}){
     return(
         <>
             <div>
-                
                 <h3>Select a restaurant to make a reservation:</h3>
                 <h3>Add filter or search function here</h3>
                 {isLoading && <h2>...loading</h2>}
