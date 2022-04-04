@@ -1,13 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
+import DisplayCard from "./DisplayCard";
+
 
 function ReservationCard({restaurantName, reservationDate}){
 
     const [reservationData, setReservationData] = useState([])
 
     useEffect(() => {
-        combineArrays()
+        combineArrays();
     },[restaurantName, reservationDate])
 
     function combineArrays(){
@@ -15,19 +17,20 @@ function ReservationCard({restaurantName, reservationDate}){
         // console.log(reservationDate)
         const combinedArray = []
             for(var i = 0; i < restaurantName.length ; i++){
-                combinedArray.push(`${restaurantName[i]} ${reservationDate[i]} `);
-                setReservationData(combinedArray)
+                combinedArray.push(`${restaurantName[i]} ${reservationDate[i]}.`);
+                setReservationData(combinedArray);
+                console.log(reservationData)
             }
 }
 
     return(
         <>
-            <h3>Reservation card</h3>
-            <h5>{reservationData}</h5>
-
+            {reservationData.map((data) => 
+                <DisplayCard data = {data}/>)
+            }
+            <br></br>
         </>
     )
 }
 
 export default ReservationCard;
-
