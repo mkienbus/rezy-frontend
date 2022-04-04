@@ -1,14 +1,10 @@
 import React, {useState} from 'react';
 import { Button } from '@mui/material';
-//import { loginUser } from './userSlice';
-//import { useSelector, useDispatch } from 'react-redux';
 
 function SignUpForm({setUser}){
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
-
-    //const dispatch = useDispatch()
 
     function handleSubmit(e){
         e.preventDefault()
@@ -57,7 +53,6 @@ function SignUpForm({setUser}){
                 />
                 <br></br>
                 <Button type = "submit" variant = "contained" size = "small">Create</Button>
-                {/* <button>Create</button> */}
                 <h3>Backend problems if you create with an existing username, check validations?</h3>
             </form>
             </div>

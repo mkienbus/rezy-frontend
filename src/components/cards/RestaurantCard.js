@@ -16,7 +16,6 @@ function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
                     {restaurant.address}
                     <br></br>
                     <ReservationModal restaurant = {restaurant} user = {user} />
-                    {/* <Button size = "small" variant = "contained" onClick = {ReservationModal}>Make a reservation at {restaurant.name}</Button> */}
                     <br></br><br></br>
                 </div>}
             </div>
