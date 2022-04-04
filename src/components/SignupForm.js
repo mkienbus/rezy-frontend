@@ -20,7 +20,7 @@ function SignUpForm({setUser}){
                 r.json().then(user => setUser(user))
                 }
                 else {
-                    r.json().then(error => setError(error.error))
+                    r.json().then(setError("Username is already taken, or passwords did not match"));
                 }
             }).then(
                 setUsername(""),
@@ -35,6 +35,7 @@ function SignUpForm({setUser}){
             <div>
             <form onSubmit = {handleSubmit}>
                 {error ? <span>{error}</span> : <span></span>}
+                <br></br>
                 <label>Username:</label>
                 <input 
                 type = "text" 
@@ -61,7 +62,7 @@ function SignUpForm({setUser}){
                 />
                 <br></br>
                 <Button type = "submit" variant = "contained" size = "small">Create</Button>
-                <h2>Mismatch passwords allow login for signup</h2>
+                <h2>All validations/password confirmations work. Customize error handling</h2>
             </form>
             </div>
         </>
