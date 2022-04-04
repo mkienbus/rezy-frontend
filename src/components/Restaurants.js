@@ -8,7 +8,6 @@ import Nav from "./tools/Nav";
 function Restaurants({user}){
 
     const { data, error, isLoading, isSuccess } = useGetAllRestaurantsQuery();
-    //console.log(data)
 
     return(
         <>
