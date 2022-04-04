@@ -9,9 +9,9 @@ import { Button } from "@mui/material";
 
 function LoginForm({setUser}){
     //fetch to /login route, method POST to create a user session existing on login
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
-    const [error, setError] = useState("")
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
     function handleSubmit(e){
         e.preventDefault()
@@ -26,10 +26,10 @@ function LoginForm({setUser}){
             })
         }).then(r => {
             if(r.ok){
-                r.json().then(user => setUser(user)).then(setUsername('')).then(setPassword(''))
+                r.json().then(user => setUser(user))
             }
             else {
-                r.json().then(error => setError(error.error))
+                r.json().then(error => setError(error.error)).then(setUsername(''),setPassword(''))
             }
         })
     }

@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import { Button } from '@mui/material';
 
 function SignUpForm({setUser}){
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
-    const [error, setError] = useState(false);
+    const [error, setError] = useState("");
 
     function handleSubmit(e){
         e.preventDefault()
@@ -22,7 +22,11 @@ function SignUpForm({setUser}){
                 else {
                     r.json().then(error => setError(error.error))
                 }
-            })
+            }).then(
+                setUsername(""),
+                setPassword(""),
+                setPasswordConfirmation("")
+            )
 
     }
 
@@ -57,7 +61,7 @@ function SignUpForm({setUser}){
                 />
                 <br></br>
                 <Button type = "submit" variant = "contained" size = "small">Create</Button>
-                <h3>ALLOWED TO LOGIN WITH DUPLICATE USERNAME</h3>
+                <h2>Mismatch passwords allow login for signup</h2>
             </form>
             </div>
         </>
