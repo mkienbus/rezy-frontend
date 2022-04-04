@@ -26,7 +26,7 @@ function Reservations(){
             <Nav />
             <h3>Your reservations:</h3>
             {reservation.map((data => 
-            <ReservationCard key = {data.id} reservation = {data}/>))
+            <ReservationCard key = {data.id} reservation = {data} resetDomRemove = {resetDomRemove}/>))
             }
         </div>
         </>

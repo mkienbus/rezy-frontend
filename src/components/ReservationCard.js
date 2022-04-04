@@ -1,13 +1,13 @@
 import React from "react";
 import { Button } from '@mui/material';
 
-function ReservationCard({reservation}){
+function ReservationCard({reservation, resetDomRemove}){
 
     function handleRemove(reservation){
             fetch(`/reservations/${reservation.id}`, {
               method: 'DELETE'
             })
-            //.then(r => {resetDomRemove(restaurant)})
+            .then(r => {resetDomRemove(reservation)})
           }
 
     return(
