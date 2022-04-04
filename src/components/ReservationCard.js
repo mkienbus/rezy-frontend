@@ -1,7 +1,35 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { Button } from '@mui/material';
 
 function ReservationCard({reservation}){
+
+    function handleRemove(reservation){
+            fetch(`/reservations/${reservation.id}`, {
+              method: 'DELETE'
+            })
+            //.then(r => {resetDomRemove(restaurant)})
+          }
+
+    return(
+        <>
+        <div>
+            {console.log(reservation)}
+            <b>{reservation.restaurant.name}</b>
+            <br></br>
+            {reservation.restaurant.address}
+            <br></br>
+            {reservation.reservation_date}
+            <br></br>
+            <Button onClick = {() => handleRemove(reservation)} variant = "contained" size = "medium">Remove reservation at {reservation.restaurant.name}</Button>
+            <br></br>
+            <br></br>
+        </div>
+        </>
+    )
+}
+
+export default ReservationCard;
+
 
     // const [reservationData, setReservationData] = useState([])
 
@@ -19,16 +47,3 @@ function ReservationCard({reservation}){
 //                 console.log(reservationData)
 //             }
 // }
-
-    return(
-        <>
-            {console.log(reservation)}
-            {reservation.restaurant.name}
-            <br></br>
-            {reservation.reservation_date}
-            <br></br>
-        </>
-    )
-}
-
-export default ReservationCard;
