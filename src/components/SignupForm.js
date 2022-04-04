@@ -53,7 +53,7 @@ function SignUpForm({setUser}){
                 />
                 <br></br>
                 <Button type = "submit" variant = "contained" size = "small">Create</Button>
-                <h3>Backend problems if you create with an existing username, check validations?</h3>
+                <h3>ALLOWED TO LOGIN WITH DUPLICATE USERNAME</h3>
             </form>
             </div>
         </>

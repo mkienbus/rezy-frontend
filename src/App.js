@@ -7,13 +7,10 @@ import { Outlet, Link } from 'react-router-dom';
 import Nav from './components/tools/Nav';
 import Restaurants from './components/Restaurants';
 import LoginForm from './components/LoginForm';
-//import { useSelector, useDispatch } from 'react-redux';
-//import { loginUser, logoutUser } from './features/userSlice';
 
 
 function App() {
-  //const userState = useSelector((state) => state.user.username)
-  //const dispatch = useDispatch()
+
   const [user, setUser] = useState(null)
 
   useEffect(() => {
