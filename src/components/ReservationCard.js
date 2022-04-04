@@ -1,33 +1,31 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-import DisplayCard from "./DisplayCard";
+function ReservationCard({reservation}){
 
+    // const [reservationData, setReservationData] = useState([])
 
-function ReservationCard({restaurantName, reservationDate}){
+//     useEffect(() => {
+//         combineArrays();
+//     },[restaurantName, reservationDate])
 
-    const [reservationData, setReservationData] = useState([])
-
-    useEffect(() => {
-        combineArrays();
-    },[restaurantName, reservationDate])
-
-    function combineArrays(){
-        // console.log(restaurantName)
-        // console.log(reservationDate)
-        const combinedArray = []
-            for(var i = 0; i < restaurantName.length ; i++){
-                combinedArray.push(`${restaurantName[i]} ${reservationDate[i]}.`);
-                setReservationData(combinedArray);
-                console.log(reservationData)
-            }
-}
+//     function combineArrays(){
+//         // console.log(restaurantName)
+//         // console.log(reservationDate)
+//         const combinedArray = []
+//             for(var i = 0; i < restaurantName.length ; i++){
+//                 combinedArray.push(`${restaurantName[i]} ${reservationDate[i]}.`);
+//                 setReservationData(combinedArray);
+//                 console.log(reservationData)
+//             }
+// }
 
     return(
         <>
-            {reservationData.map((data) => 
-                <DisplayCard data = {data}/>)
-            }
+            {console.log(reservation)}
+            {reservation.restaurant.name}
+            <br></br>
+            {reservation.reservation_date}
             <br></br>
         </>
     )

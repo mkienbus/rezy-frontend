@@ -6,16 +6,20 @@ import ReservationCard from "./ReservationCard";
 
 
 function Reservations(){
-    const [restaurantName, setRestaurantName] = useState([])
-    const [reservationDate, setReservationDate] = useState([])
+    const [reservation, setReservation] = useState([])
+
+    // const [restaurantName, setRestaurantName] = useState([])
+    // const [reservationDate, setReservationDate] = useState([])
 
 
     //.map over response 
     useEffect(() => {
         fetch('/reservations').then((r) => r.json())
             .then((data) => {
-                setRestaurantName(data.map((d) => d.restaurant.name))
-                setReservationDate(data.map((d) => d.reservation_date))
+                // console.log(data)
+                setReservation(data)
+                // setRestaurantName(data.map((d) => d.restaurant.name))
+                // setReservationDate(data.map((d) => d.reservation_date))
             })
     },[]);
 
@@ -23,7 +27,9 @@ function Reservations(){
         <>
             <Nav />
             <h3>Your reservations:</h3>
-            <ReservationCard restaurantName = {restaurantName} reservationDate = {reservationDate}/>
+            {reservation.map((data => 
+            <ReservationCard key = {data.id} reservation = {data}/>))
+            }
         </>
     )
 }
