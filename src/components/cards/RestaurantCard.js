@@ -2,12 +2,18 @@ import React from "react";
 import ReservationModal from "../modals/ReservationModal";
 import { useState } from "react";
 import RestaurantGrid from "../table/RestaurantGrid";
+import { Button } from "@mui/material";
 
 function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
 
     const [favorite, setFavorite] = useState(restaurant.favorite)
+    // console.log(favorite)
 
-    function handleChange(){
+    function handleClick(){
+        setFavorite(true)
+    }
+
+    if (favorite){
         fetch(`/restaurants/${restaurant.id}`, {
             method: "PATCH",
             headers: {"Content-Type": "application/json"},
@@ -18,11 +24,11 @@ function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
         })
             .then(r =>r.json())
             .then(r => {
-                {setFavorite(!favorite)};
                 console.log(r)
             })
     }
-    
+
+
     return(
         <>
             <div>
@@ -30,15 +36,13 @@ function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
                 {error && <h2>Something went wrong</h2>}
                 {isSuccess &&
                 <div>
-                    {/* <RestaurantGrid user = {user} restaurant = {restaurant}/> */}
                     {console.log(restaurant)}
                     {restaurant.name}
                     <br></br>
                     {restaurant.address}
                     <br></br>
-                    <p>Favorite? {restaurant.favorite ? "Yes" : "No"} </p>
-                    <input type = "checkbox" className = "favorite" value = {favorite} checked = {favorite} onChange = {handleChange}/>
                     <ReservationModal restaurant = {restaurant} user = {user} />
+                    <Button size = "small" variant = "contained" onClick={handleClick}>Add {restaurant.name} to favorites</Button>
                     <br></br><br></br>
                 </div>}
             </div>
@@ -47,3 +51,6 @@ function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
 }
 
 export default RestaurantCard;
+
+{/* <p>Favorite? {restaurant.favorite ? "Yes" : "No"} </p>
+<input type = "checkbox" className = "favorite" value = {favorite} checked = {favorite} onChange = {handleChange}/> */}

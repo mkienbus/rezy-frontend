@@ -102,33 +102,3 @@ function ReservationModal({user, restaurant}) {
 
 
 export default ReservationModal;
-
-
-
-
-// function ReservationModal({restaurant}) {
-//   const [open, setOpen] = useState(false);
-//   const handleOpen = () => setOpen(true);
-//   const handleClose = () => setOpen(false);
-
-//   return (
-//     <div>
-//       <Button size = "small" variant = "contained" onClick={handleOpen}>Make reservation at {restaurant.name}</Button>
-//       <Modal
-//         open={open}
-//         onClose={handleClose}
-//         aria-labelledby="modal-modal-title"
-//         aria-describedby="modal-modal-description"
-//       >
-//         <Box sx={style}>
-//           <Typography id="modal-modal-title" variant="h6" component="h2">
-//             Confirmed!
-//           </Typography>
-//           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-//             You have successfully booked a reservation at {restaurant.name}
-//           </Typography>
-//         </Box>
-//       </Modal>
-//     </div>
-//   );
-// }
