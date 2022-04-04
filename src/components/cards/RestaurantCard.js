@@ -1,14 +1,8 @@
 import React from "react";
-import ReservationModal from "./modals/ReservationModal";
+import ReservationModal from "../modals/ReservationModal";
 //import Button from '@mui/material/Button';
 
 function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
-    //console.log(restaurant)
-
-function handleReservation(){
-
-
-}
 
     return(
         <>

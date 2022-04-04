@@ -1,9 +1,6 @@
-import React, { useEffect } from "react";
-import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import React from "react";
+import RestaurantCard from "./cards/RestaurantCard";
 import { useGetAllRestaurantsQuery } from "../slices/restaurantSlice";
-import { showReservations } from "../slices/reservationSlice";
 
 function Restaurants({user}){
 

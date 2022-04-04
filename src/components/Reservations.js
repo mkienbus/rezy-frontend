@@ -2,7 +2,7 @@ import React from "react";
 import Nav from "./tools/Nav";
 import { useState, useEffect } from "react"
 
-import ReservationCard from "./ReservationCard";
+import ReservationCard from "./cards/ReservationCard";
 
 
 function Reservations(){
