@@ -11,6 +11,7 @@ function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
                 {error && <h2>Something went wrong</h2>}
                 {isSuccess &&
                 <div>
+                    {console.log(restaurant)}
                     {restaurant.name}
                     <br></br>
                     {restaurant.address}
