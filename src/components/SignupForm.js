@@ -5,6 +5,7 @@ function SignUpForm({setUser}){
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
+    const [error, setError] = useState(false);
 
     function handleSubmit(e){
         e.preventDefault()
@@ -15,18 +16,21 @@ function SignUpForm({setUser}){
             },
             body: JSON.stringify({username, password, password_confirmation: passwordConfirmation})
         }).then(r => {
-            (r.json().then(user => setUser(user)))
-        }).then(
-            setUsername('')
-        )
+            if(r.ok){
+                r.json().then(user => setUser(user))
+                }
+                else {
+                    r.json().then(error => setError(error.error))
+                }
+            })
 
     }
-
 
     return(
         <>
             <div>
             <form onSubmit = {handleSubmit}>
+                {error ? <span>{error}</span> : <span></span>}
                 <label>Username:</label>
                 <input 
                 type = "text" 
