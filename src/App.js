@@ -6,7 +6,6 @@ import { Outlet, Link } from 'react-router-dom';
 
 import Nav from './components/tools/Nav';
 import Restaurants from './components/Restaurants';
-import Favorites from './components/Favorites';
 import LoginForm from './components/LoginForm';
 
 
@@ -34,8 +33,8 @@ function App() {
 
     return (
       <div className="App">
-        <Nav handleLogoutClick = {handleLogoutClick}/>
-        {/* <Button onClick = {handleLogoutClick} variant = "contained" size = "medium" color = "error">Logout</Button> */}
+        <Nav user = {user}/>
+        <Button onClick = {handleLogoutClick} variant = "contained" size = "medium" color = "error">Logout</Button>
         <h1>Rezy</h1>
         <Restaurants user = {user}/>
         <Link to="/about">ABOUT</Link>

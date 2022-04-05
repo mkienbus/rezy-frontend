@@ -20,7 +20,7 @@ function ReservationCard({reservation, resetDomRemove}){
             <br></br>
             {reservation.reservation_date}
             <br></br>
-            <Button onClick = {() => handleRemove(reservation)} variant = "contained" size = "medium">Remove reservation at {reservation.restaurant.name}</Button>
+            <Button onClick = {() => handleRemove(reservation)} variant = "contained" size = "medium">Remove reservation at "{reservation.restaurant.name}"</Button>
             <br></br>
             <br></br>
         </div>
