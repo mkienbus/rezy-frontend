@@ -8,26 +8,24 @@ function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
 
     const [favorite, setFavorite] = useState(restaurant.favorite)
     // console.log(favorite)
+     // function handleClick(){
+    //     setFavorite(true)
+    // }
 
-    function handleClick(){
-        setFavorite(true)
-    }
-
-    if (favorite){
-        fetch(`/restaurants/${restaurant.id}`, {
-            method: "PATCH",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({
-                favorite,
-                user_id: user.id
-            }),
+   function handleClick(){
+    fetch(`/favorites`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            user_id: user.id,
+            restaurant_id: restaurant.id
+        }),
+    })
+        .then(r =>r.json())
+        .then(r => {
+            console.log(r)
         })
-            .then(r =>r.json())
-            .then(r => {
-                console.log(r)
-            })
-    }
-
+   }
 
     return(
         <>
@@ -54,3 +52,5 @@ export default RestaurantCard;
 
 {/* <p>Favorite? {restaurant.favorite ? "Yes" : "No"} </p>
 <input type = "checkbox" className = "favorite" value = {favorite} checked = {favorite} onChange = {handleChange}/> */}
+
+// /restaurants/${restaurant.id}

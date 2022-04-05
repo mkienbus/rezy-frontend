@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Nav from "./tools/Nav";
 import FavoriteCard from './cards/FavoriteCard'
 
 function Favorites(){
+    const [favorites, setFavorites] = useState([])
 
-//fetch to backend /favorites or restaurants favorite=true and, send index as prop to favecard
+    useEffect(() => {
+        fetch('/favorites').then((r) => {
+          if (r.ok) {
+            r.json().then((r) => console.log(r));
+          }
+        })
+      }, []);
+
+
     return(
         <>
         <Nav />
@@ -15,3 +24,5 @@ function Favorites(){
 }
 
 export default Favorites;
+
+// (data) => setFavorites(data)
