@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
-function FavoriteCard({favorite, error, isLoading, isSuccess}){
+import { Button } from "@mui/material";
 
-console.log(favorite)
+function FavoriteCard({favorite, error, isLoading, isSuccess, resetDomRemove}){
+    const [favorites, setFavorites] = useState([])
+
+    console.log(favorite)
+
+    function handleRemove(favorite){
+        fetch(`/favorites/${favorite.id}`, {
+        method: 'DELETE'
+        })
+        .then(r => {setFavorites(r)})
+    }
+
+    // function resetDomRemove(favorite){
+    //     setFavorites((favorites) => favorites.filter(r => r.id !== favorite.id))
+    //   }
+
     return(
         <>
         <div>
@@ -13,8 +28,10 @@ console.log(favorite)
                     {favorite.restaurant.name}
                     <br></br>
                     {favorite.restaurant.address}
-                    <br></br><br></br>
+                    <br></br>
                 </div>}
+                <Button onClick = {() => handleRemove(favorite)} variant = "contained" size = "medium">Remove "{favorite.restaurant.name}" from favorites</Button>
+                <br></br><br></br>
             </div>
         </>
     )

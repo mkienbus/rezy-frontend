@@ -5,17 +5,13 @@ import Nav from "./tools/Nav";
 import FavoriteCard from './cards/FavoriteCard'
 
 function Favorites(){
-    const [favorites, setFavorites] = useState([])
 
     const { data, error, isLoading, isSuccess } = useGetAllFavoritesQuery();
 
-    // useEffect(() => {
-    //     fetch('/favorites').then((r) => {
-    //       if (r.ok) {
-    //         r.json().then((data) => setFavorites(data));
-    //       }
-    //     })
-    //   }, []);
+
+    // function resetDomRemove(favorite){
+    //     setFavorites((favorites) => favorites.filter(r => r.id !== favorite.id))
+    //   }
 
     return(
         <>
@@ -31,7 +27,3 @@ function Favorites(){
 }
 
 export default Favorites;
-
-// {favorites?.map((d) => 
-//     <FavoriteCard key = {d.id} favorites = {d} />
-//     )}

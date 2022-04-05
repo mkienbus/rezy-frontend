@@ -7,10 +7,6 @@ import { Button } from "@mui/material";
 function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
 
     const [favorites, setFavorites] = useState(restaurant.favorite)
-    // console.log(favorite)
-     // function handleClick(){
-    //     setFavorite(true)
-    // }
 
    function handleClick(){
     fetch(`/favorites`, {
@@ -34,7 +30,6 @@ function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
                 {error && <h2>Something went wrong</h2>}
                 {isSuccess &&
                 <div>
-                    {console.log(restaurant)}
                     {restaurant.name}
                     <br></br>
                     {restaurant.address}
