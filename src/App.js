@@ -6,6 +6,7 @@ import { Outlet, Link } from 'react-router-dom';
 
 import Nav from './components/tools/Nav';
 import Restaurants from './components/Restaurants';
+import Favorites from './components/Favorites';
 import LoginForm from './components/LoginForm';
 
 

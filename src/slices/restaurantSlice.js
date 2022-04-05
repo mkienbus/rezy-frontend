@@ -11,7 +11,10 @@ export const restaurantApi = createApi({
         getAllRestaurants: builder.query({
             query: () => `/restaurants`,
         }),
+        getAllFavorites: builder.query({
+            query: () => '/favorites',
+        })
     }),
 })
 
-export const {useGetAllRestaurantsQuery} = restaurantApi
+export const {useGetAllRestaurantsQuery, useGetAllFavoritesQuery} = restaurantApi

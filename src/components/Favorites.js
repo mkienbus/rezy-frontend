@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useGetAllFavoritesQuery } from "../slices/restaurantSlice";
 
 import Nav from "./tools/Nav";
 import FavoriteCard from './cards/FavoriteCard'
@@ -6,23 +7,27 @@ import FavoriteCard from './cards/FavoriteCard'
 function Favorites(){
     const [favorites, setFavorites] = useState([])
 
-    useEffect(() => {
-        fetch('/favorites').then((r) => {
-          if (r.ok) {
-            r.json().then((r) => console.log(r));
-          }
-        })
-      }, []);
+    const { data, error, isLoading, isSuccess } = useGetAllFavoritesQuery();
+    console.log(data)
 
+    // useEffect(() => {
+    //     fetch('/favorites').then((r) => {
+    //       if (r.ok) {
+    //         r.json().then((data) => setFavorites(data));
+    //       }
+    //     })
+    //   }, []);
 
     return(
         <>
         <Nav />
-        <div><FavoriteCard /></div>
+        <FavoriteCard/>
         </>
     )
 }
 
 export default Favorites;
 
-// (data) => setFavorites(data)
+// {favorites?.map((d) => 
+//     <FavoriteCard key = {d.id} favorites = {d} />
+//     )}
