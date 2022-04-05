@@ -8,7 +8,6 @@ function Favorites(){
     const [favorites, setFavorites] = useState([])
 
     const { data, error, isLoading, isSuccess } = useGetAllFavoritesQuery();
-    console.log(data)
 
     // useEffect(() => {
     //     fetch('/favorites').then((r) => {
@@ -21,7 +20,12 @@ function Favorites(){
     return(
         <>
         <Nav />
-        <FavoriteCard/>
+        <h3>Your favorite restaurants:</h3>
+        {isLoading && <h2>...loading</h2>}
+        {error && <h2>Something went wrong</h2>}
+        {data?.map((d) => 
+        <FavoriteCard key = {d.id} favorite = {d} isSuccess = {isSuccess}/>
+        )}
         </>
     )
 }
