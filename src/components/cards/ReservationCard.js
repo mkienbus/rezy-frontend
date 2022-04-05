@@ -29,21 +29,3 @@ function ReservationCard({reservation, resetDomRemove}){
 }
 
 export default ReservationCard;
-
-
-    // const [reservationData, setReservationData] = useState([])
-
-//     useEffect(() => {
-//         combineArrays();
-//     },[restaurantName, reservationDate])
-
-//     function combineArrays(){
-//         // console.log(restaurantName)
-//         // console.log(reservationDate)
-//         const combinedArray = []
-//             for(var i = 0; i < restaurantName.length ; i++){
-//                 combinedArray.push(`${restaurantName[i]} ${reservationDate[i]}.`);
-//                 setReservationData(combinedArray);
-//                 console.log(reservationData)
-//             }
-// }

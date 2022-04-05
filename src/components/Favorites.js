@@ -6,21 +6,28 @@ import FavoriteCard from './cards/FavoriteCard'
 
 function Favorites(){
 
-    const { data, error, isLoading, isSuccess } = useGetAllFavoritesQuery();
+    // const { data, error, isLoading, isSuccess } = useGetAllFavoritesQuery();
+
+    const [favorites, setFavorites] = useState([])
+
+    useEffect(() => {
+        fetch('/favorites').then((r) => r.json())
+            .then((data) => {
+                setFavorites(data)
+            })
+    },[]);
 
 
-    // function resetDomRemove(favorite){
-    //     setFavorites((favorites) => favorites.filter(r => r.id !== favorite.id))
-    //   }
+    function resetDomRemove(favorite){
+        setFavorites((favorites) => favorites.filter(r => r.id !== favorite.id))
+      }
 
     return(
         <>
         <Nav />
         <h3>Your favorite restaurants:</h3>
-        {isLoading && <h2>...loading</h2>}
-        {error && <h2>Something went wrong</h2>}
-        {data?.map((d) => 
-        <FavoriteCard key = {d.id} favorite = {d} isSuccess = {isSuccess}/>
+        {favorites.map((d) => 
+        <FavoriteCard key = {d.id} favorites = {d} resetDomRemove = {resetDomRemove}/>
         )}
         </>
     )
