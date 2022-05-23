@@ -2,9 +2,7 @@ import './App.css';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { Button } from '@mui/material';
-import { Outlet, Link } from 'react-router-dom';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { Link } from 'react-router-dom';
 
 import Nav from './components/tools/Nav';
 import Restaurants from './components/Restaurants';
@@ -35,13 +33,11 @@ function App() {
 
     return (
       <div className="App">
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
           <Nav user = {user}/>
           <Button onClick = {handleLogoutClick} variant = "contained" size = "medium" color = "error">Logout</Button>
           <h1>Rezy</h1>
           <Restaurants user = {user}/>
           <Link to="/about">ABOUT</Link>
-        </LocalizationProvider>
       </div>
     );
 }
