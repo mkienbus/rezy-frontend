@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
 
-function DateTimePicker(){
+function MUIDateTimePicker(){
     const [value, setValue] = useState(new Date());
 
     return (
@@ -23,4 +23,4 @@ function DateTimePicker(){
     );
 }
 
-export default DateTimePicker;
+export default MUIDateTimePicker;
