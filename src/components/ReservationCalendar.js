@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 //imported Calendar from tool
 import Calendar from "react-calendar";
-import moment from "moment";
 import 'react-calendar/dist/Calendar.css';
 
 //calendar resource and info on customizing CSS
