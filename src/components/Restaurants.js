@@ -1,7 +1,6 @@
 import React from "react";
 import { useGetAllRestaurantsQuery } from "../slices/restaurantSlice";
 
-import MUIDateTimePicker from "./DateTimePicker";
 import RestaurantCard from "./cards/RestaurantCard";
 
 
@@ -15,7 +14,6 @@ function Restaurants({user}){
                 <h3>Select a restaurant to make a reservation:</h3>
                 {isLoading && <h2>...loading</h2>}
                 {error && <h2>Something went wrong</h2>}
-                <MUIDateTimePicker />
                 {data?.map((d) => 
                 <RestaurantCard key = {d.id} restaurant = {d} isSuccess = {isSuccess} user = {user}/>
                 )}

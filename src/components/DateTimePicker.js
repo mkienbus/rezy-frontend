@@ -10,16 +10,16 @@ function MUIDateTimePicker(){
     const [value, setValue] = useState(new Date());
 
     return (
-      <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <DateTimePicker
-          renderInput={(props) => <TextField {...props} />}
-          label="DateTimePicker"
-          value={value}
-          onChange={(newValue) => {
-            setValue(newValue);
-          }}
-        />
-      </LocalizationProvider>
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <DateTimePicker
+                renderInput={(props) => <TextField {...props} />}
+                label="DateTimePicker"
+                value={value}
+                onChange={(newValue) => {
+                setValue(newValue);
+                }}
+            />
+    </LocalizationProvider>
     );
 }
 

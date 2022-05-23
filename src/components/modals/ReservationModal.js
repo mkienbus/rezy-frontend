@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Button, Modal, Alert }from '@mui/material';
 import ReservationChildModal from './ReservationChildModal';
 import ReservationCalendar from '../ReservationCalendar';
+import MUIDateTimePicker from '../DateTimePicker';
 
 //parent component to the nested modal, calendar, and select tools
 //sends callback functions to children, holds state information for them here
@@ -91,7 +92,8 @@ function ReservationModal({user, restaurant}) {
         >
           <Box sx={{ ...style, width: 400 }}>
             <h2 id="parent-modal-title">Select a date to make a reservation:</h2>
-            <ReservationCalendar callBackClickedDate={callBackClickedDate}/>
+            {/* <ReservationCalendar callBackClickedDate={callBackClickedDate}/> */}
+            <MUIDateTimePicker />
             <Button onClick = {handleClose}>Close window</Button>
             <ReservationChildModal  callBackTime = {callBackTime} clickedDate = {clickedDate} handleConfirmedTimeAndDate = {handleConfirmedTimeAndDate} style = {style}/>
           </Box>
