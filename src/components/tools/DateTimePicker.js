@@ -6,17 +6,18 @@ import TextField from '@mui/material/TextField';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
 
-function MUIDateTimePicker(){
+function MUIDateTimePicker({callBackDateTime}){
     const [value, setValue] = useState(new Date());
 
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DateTimePicker
                 renderInput={(props) => <TextField {...props} />}
-                label="DateTimePicker"
+                label="Select calendar, or edit"
                 value={value}
                 onChange={(newValue) => {
                 setValue(newValue);
+                callBackDateTime(newValue)
                 }}
             />
     </LocalizationProvider>

@@ -11,12 +11,8 @@ import 'react-calendar/dist/Calendar.css';
 
 //exported Component to be rendered by ReservationModal
 function ReservationCalendar({callBackClickedDate}){
-
-    // let formattedDate = (moment(new Date()).format("MMM Do YY"))
     
     const [date, setDate] = useState(new Date())
-
-    // moment().format("MMM Do YY"); 
 
     //callback to ReservationModal for date information that was selected
 

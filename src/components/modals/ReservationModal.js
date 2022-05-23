@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Box, Button, Modal, Alert }from '@mui/material';
 import ReservationChildModal from './ReservationChildModal';
-import ReservationCalendar from '../ReservationCalendar';
-import MUIDateTimePicker from '../DateTimePicker';
+import ReservationCalendar from '../tools/ReservationCalendar';
+import MUIDateTimePicker from '../tools/DateTimePicker';
 
 //parent component to the nested modal, calendar, and select tools
 //sends callback functions to children, holds state information for them here
@@ -23,11 +23,12 @@ const style = {
   
 function ReservationModal({user, restaurant}) {
     const [open, setOpen] = useState(false);
-    const [clickedDate, setClickedDate] = useState("")
-    const [time, setTime] = useState("")
-    const [error, setError] = useState("")
+    const [dateTime, setDateTime] = useState("");
+    // const [clickedDate, setClickedDate] = useState("")
+    // const [time, setTime] = useState("")
+    const [error, setError] = useState("");
 
-    const reservationDate = `${clickedDate} ${time}`
+    // const reservationDate = `${clickedDate} ${time}`
 
     const handleOpen = () => {
       setOpen(true);
@@ -36,22 +37,32 @@ function ReservationModal({user, restaurant}) {
       setOpen(false);
     };
 
-    //stretch goal, use redux to save time and date state to avoid all these callback functions
-    function callBackClickedDate(dateFromReservationCalendar){
-      setClickedDate(dateFromReservationCalendar)
-      console.log(dateFromReservationCalendar)
+    function handleConfirmation(){
+
+      handleClose();
+
     }
 
-    function callBackTime(timeFromSelect){
-      setTime(timeFromSelect)
-      console.log(timeFromSelect)
+    function callBackDateTime(dataFromDatePicker){
+      setDateTime(dataFromDatePicker);
+      console.log(dataFromDatePicker);
     }
 
-    function handleConfirmedTimeAndDate(){
-      console.log(reservationDate)
-      setOpen(false)
-      postReservation(reservationDate);
-    }
+    // function callBackClickedDate(dateFromReservationCalendar){
+    //   setClickedDate(dateFromReservationCalendar)
+    //   console.log(dateFromReservationCalendar)
+    // }
+
+    // function callBackTime(timeFromSelect){
+    //   setTime(timeFromSelect)
+    //   console.log(timeFromSelect)
+    // }
+
+    // function handleConfirmedTimeAndDate(){
+    //   console.log(reservationDate)
+    //   setOpen(false)
+    //   postReservation(reservationDate);
+    // }
 
     function postReservation(){
       fetch('/reservations',{
@@ -62,21 +73,18 @@ function ReservationModal({user, restaurant}) {
           body: JSON.stringify({
             user_id: user.id,
             restaurant_id: restaurant.id,
-            reservation_date: reservationDate
+            reservation_date: dateTime
           })
       }).then(r => {
         if(r.ok){
-        r.json().then(alert(`Your reservation is confirmed for ${restaurant.name} on ${clickedDate} at ${time}!`))
+        r.json().then(alert(`Your reservation is confirmed for ${restaurant.name} at ${dateTime}!`))
         }
         else {
             r.json().then(error => setError(error.error))
         }
       }).then(
-          setClickedDate("")
-      ).then(
-        setTime("")
+          setDateTime("")
       )
-
   }
 
   
@@ -93,9 +101,10 @@ function ReservationModal({user, restaurant}) {
           <Box sx={{ ...style, width: 400 }}>
             <h2 id="parent-modal-title">Select a date to make a reservation:</h2>
             {/* <ReservationCalendar callBackClickedDate={callBackClickedDate}/> */}
-            <MUIDateTimePicker />
+            <MUIDateTimePicker callBackDateTime = {callBackDateTime}/>
+            <Button onClick = {handleConfirmation}>Confirm selection</Button>
             <Button onClick = {handleClose}>Close window</Button>
-            <ReservationChildModal  callBackTime = {callBackTime} clickedDate = {clickedDate} handleConfirmedTimeAndDate = {handleConfirmedTimeAndDate} style = {style}/>
+            {/* <ReservationChildModal  callBackTime = {callBackTime} clickedDate = {clickedDate} handleConfirmedTimeAndDate = {handleConfirmedTimeAndDate} style = {style}/> */}
           </Box>
         </Modal>
       </div>
