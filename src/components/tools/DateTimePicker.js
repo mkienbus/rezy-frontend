@@ -15,6 +15,7 @@ function MUIDateTimePicker({callBackDateTime}){
                 renderInput={(props) => <TextField {...props} />}
                 label="Select calendar, or edit"
                 value={value}
+                format="MM-DD-YYYY"
                 onChange={(newValue) => {
                 setValue(newValue);
                 callBackDateTime(newValue)

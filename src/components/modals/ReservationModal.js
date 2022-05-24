@@ -48,22 +48,6 @@ function ReservationModal({user, restaurant}) {
       console.log(dataFromDatePicker);
     }
 
-    // function callBackClickedDate(dateFromReservationCalendar){
-    //   setClickedDate(dateFromReservationCalendar)
-    //   console.log(dateFromReservationCalendar)
-    // }
-
-    // function callBackTime(timeFromSelect){
-    //   setTime(timeFromSelect)
-    //   console.log(timeFromSelect)
-    // }
-
-    // function handleConfirmedTimeAndDate(){
-    //   console.log(reservationDate)
-    //   setOpen(false)
-    //   postReservation(reservationDate);
-    // }
-
     function postReservation(){
       fetch('/reservations',{
           method: "POST", 
@@ -77,7 +61,7 @@ function ReservationModal({user, restaurant}) {
           })
       }).then(r => {
         if(r.ok){
-        r.json().then(alert(`Your reservation is confirmed for ${restaurant.name} at ${dateTime}!`))
+        r.json().then(alert(`Your reservation is confirmed at ${restaurant.name} on ${dateTime}!`))
         }
         else {
             r.json().then(error => setError(error.error))
@@ -102,7 +86,7 @@ function ReservationModal({user, restaurant}) {
             <h2 id="parent-modal-title">Select a date to make a reservation:</h2>
             {/* <ReservationCalendar callBackClickedDate={callBackClickedDate}/> */}
             <MUIDateTimePicker callBackDateTime = {callBackDateTime}/>
-            <Button onClick = {handleConfirmation}>Confirm selection</Button>
+            <Button onClick = {postReservation}>Confirm selection</Button>
             <Button onClick = {handleClose}>Close window</Button>
             {/* <ReservationChildModal  callBackTime = {callBackTime} clickedDate = {clickedDate} handleConfirmedTimeAndDate = {handleConfirmedTimeAndDate} style = {style}/> */}
           </Box>
