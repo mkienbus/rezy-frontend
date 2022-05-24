@@ -24,11 +24,7 @@ const style = {
 function ReservationModal({user, restaurant}) {
     const [open, setOpen] = useState(false);
     const [dateTime, setDateTime] = useState("");
-    // const [clickedDate, setClickedDate] = useState("")
-    // const [time, setTime] = useState("")
     const [error, setError] = useState("");
-
-    // const reservationDate = `${clickedDate} ${time}`
 
     const handleOpen = () => {
       setOpen(true);
@@ -38,7 +34,8 @@ function ReservationModal({user, restaurant}) {
     };
 
     function handleConfirmation(){
-
+      postReservation();
+      console.log(dateTime)
       handleClose();
 
     }
@@ -86,7 +83,7 @@ function ReservationModal({user, restaurant}) {
             <h2 id="parent-modal-title">Select a date to make a reservation:</h2>
             {/* <ReservationCalendar callBackClickedDate={callBackClickedDate}/> */}
             <MUIDateTimePicker callBackDateTime = {callBackDateTime}/>
-            <Button onClick = {postReservation}>Confirm selection</Button>
+            <Button onClick = {handleConfirmation}>Confirm selection</Button>
             <Button onClick = {handleClose}>Close window</Button>
             {/* <ReservationChildModal  callBackTime = {callBackTime} clickedDate = {clickedDate} handleConfirmedTimeAndDate = {handleConfirmedTimeAndDate} style = {style}/> */}
           </Box>
