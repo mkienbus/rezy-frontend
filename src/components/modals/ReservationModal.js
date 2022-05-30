@@ -42,10 +42,10 @@ function ReservationModal({user, restaurant}) {
 
     function callBackDateTime(dataFromDatePicker){
       setDateTime(dataFromDatePicker);
-      console.log(dataFromDatePicker);
     }
 
     function postReservation(){
+      console.log(dateTime)
       fetch('/reservations',{
           method: "POST", 
           headers: {
@@ -56,6 +56,7 @@ function ReservationModal({user, restaurant}) {
             restaurant_id: restaurant.id,
             reservation_date: dateTime
           })
+    
       }).then(r => {
         if(r.ok){
         r.json().then(alert(`Your reservation is confirmed at ${restaurant.name} on ${dateTime}!`))
