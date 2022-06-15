@@ -4,7 +4,8 @@ This application is meant to be a demonstration of the skills I learned in my pr
 ## Requirements:  
 | Requirement | Version |
 | --- | --- |
-| Ruby | 2.7.4 |
+| Ruby | 2.7.5p203 |
+| Rails | 7.0.2.2 |
 | PostgreSQL | 14.1 |
 | Node | 16.13.2 |
 | React | 17.0.2|
@@ -44,7 +45,7 @@ This application is meant to be a demonstration of the skills I learned in my pr
   
 ![usage](./images/usageGif.gif)  
 ## Roadmap  
-I would like to add password authentication to this application in the near future. 
+I am currently working on replacing the old calendar and time selection tool I was using with MUI's datetime picker tool. 
 ## License
 MIT License
 
