@@ -4,15 +4,17 @@ This application is meant to be a demonstration of the skills I learned in my pr
 ## Requirements:  
 | Requirement | Version |
 | --- | --- |
-| Ruby | 2.7.5p203 |
-| Rails | 7.0.2.2 |
+| Ruby | 2.7.5 |
+| Rails | 7.0.2.3 |
 | PostgreSQL | 14.1 |
 | Node | 16.13.2 |
 | React | 17.0.2|
+| MUI |  |
+| Date FNS |  |
 
 ## Installation:
 - **Ruby**:  
-  Run `rvm install 2.7.4 --default`  
+  Run `rvm install 2.7.5 --default`  
   Also install the latest versions of bundler and rails
   ```
   gem install bundler
@@ -31,6 +33,9 @@ This application is meant to be a demonstration of the skills I learned in my pr
   to install and set node 16 as default. 
 - **React**  
   Run `npm install react@17.0.2`
+
+- **Date FNS**
+  Run `npm install @date-io/date-fns`
 
 
 ## Usage
