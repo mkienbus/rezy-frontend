@@ -44,13 +44,10 @@ This application is meant to be a demonstration of the skills I learned in my pr
 - The application initially directs the user to a login page, with an option to create a username and password for new users. If you do not run `rails db:seed` to populate with the provided seed file, you can create your own username at this time.  
   
 <!-- ![login](image path)   -->
-
 - After logging in or creating a username/password to login with, you are directed to the home page which renders a list of randomly generated restaurants and their attributes.
 - You can add any of the restaurants to your profile's "favorites" section, or make reservations at each restaurant through the datetime picker. 
 - You can view and edit your current list of favorites and reservations by navigating to the appropriate section via the navbar at the top of the screen.
-  
 <!-- ![home](image path)   -->
-- The home page also has a navigation bar and logout button at the top. You can also edit information on the rendered items in your list.  
   
 <!-- ![usage](./images/usageGif.gif)   -->
 ## Roadmap  
