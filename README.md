@@ -9,8 +9,8 @@ This application is meant to be a demonstration of the skills I learned in my pr
 | PostgreSQL | 14.1 |
 | Node | 16.13.2 |
 | React | 17.0.2|
-| MUI |  |
-| Date FNS |  |
+| MUI | 5.5.3 |
+| Date FNS | 2.28.0 |
 
 ## Installation:
 - **Ruby**:  
@@ -34,9 +34,11 @@ This application is meant to be a demonstration of the skills I learned in my pr
 - **React**  
   Run `npm install react@17.0.2`
 
-- **Date FNS**
+- **Date FNS**  
   Run `npm install @date-io/date-fns`
 
+- **MUI**  
+  Run `npm install @mui/material @emotion/react @emotion/styled`
 
 ## Usage
 - The application initially directs the user to a login page, with an option to create a username for new users. If you do not run `rails db:seed` to populate with the provided seed file, you can create your own username at this time.  
@@ -48,7 +50,7 @@ This application is meant to be a demonstration of the skills I learned in my pr
 <!-- ![home](image path)   -->
 - The home page also has a navigation bar and logout button at the top. You can also edit information on the rendered items in your list.  
   
-![usage](./images/usageGif.gif)  
+<!-- ![usage](./images/usageGif.gif)   -->
 ## Roadmap  
 I am currently working on replacing the old calendar and time selection tool I was using with MUI's datetime picker tool. 
 ## License
