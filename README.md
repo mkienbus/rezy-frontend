@@ -1,4 +1,4 @@
-# Restaurant Tracker App
+# Rezy App
 ## Description:
 This application is meant to be a demonstration of the skills I have learned so far in my programming course. It utilizes a PostgreSQL database, Ruby on Rails backend, and the React framework for the frontend. My focus on this application was the functionality between the back and front ends, without a heavy focus on the front/styling.  
 ## Requirements:  
