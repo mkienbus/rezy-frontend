@@ -34,7 +34,7 @@ function App() {
     return (
       <div className="App">
           <Nav user = {user}/>
-          <Button onClick = {handleLogoutClick} variant = "contained" size = "medium" color = "error">Logout</Button>
+          <Button Button = {handleLogoutClick} variant = "contained" size = "medium" color = "error">Logout</Button>
           <h1>Rezy</h1>
           <Restaurants user = {user}/>
           <Link to="/about">ABOUT</Link>

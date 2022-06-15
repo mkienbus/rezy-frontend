@@ -1,48 +1,70 @@
-# Getting Started with Create React App
+# Restaurant Tracker App
+## Description:
+This application is meant to be a demonstration of the skills I have learned so far in my programming course. It utilizes a PostgreSQL database, Ruby on Rails backend, and the React framework for the frontend. My focus on this application was the functionality between the back and front ends, without a heavy focus on the front/styling.  
+## Requirements:  
+| Requirement | Version |
+| --- | --- |
+| Ruby | 2.7.4 |
+| PostgreSQL | 14.1 |
+| Node | 16.13.2 |
+| React | 17.0.2|
 
-Initial commit.
+## Installation:
+- **Ruby**:  
+  Run `rvm install 2.7.4 --default`  
+  Also install the latest versions of bundler and rails
+  ```
+  gem install bundler
+  gem install rails
+  ```
+- **PostgreSQL**  
+  Easily installable on OSX with homebrew.  
+  Run `brew install postgresql`  
+  After installation is complete, run `brew services start postgresql` to start Postgres services.  
+- **Node**  
+  Run
+  ```
+  nvm install 16
+  nvm use 16
+  ```
+  to install and set node 16 as default. 
+- **React**  
+  Run `npm install react@17.0.2`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Usage
+- The application initially directs the user to a login page, with an option to create a username for new users. If you do not run `rails db:seed` to populate with the provided seed file, you can create your own username at this time.  
+  
+![login](./images/login.png)  
+##### (note: there is no password authentication on this application)
 
-In the project directory, you can run:
+- After logging in or creating a username to login with, you are directed to the home page which renders a list of all your restaurants and their attributes.  
+  
+![home](./images/home.png)  
+- The home page also has a navigation bar and logout button at the top. You can also edit information on the rendered items in your list.  
+  
+![usage](./images/usageGif.gif)  
+## Roadmap  
+I would like to add password authentication to this application in the near future. 
+## License
+MIT License
 
-### `npm start`
+Copyright (c) [2022] [Michael Kienbusch]
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
