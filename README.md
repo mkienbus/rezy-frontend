@@ -37,8 +37,12 @@ This application is meant to be a demonstration of the skills I learned in my pr
 - **Date FNS**  
   Run `npm install @date-io/date-fns`
 
-- **MUI**  
-  Run `npm install @mui/material @emotion/react @emotion/styled`
+- **MUI and datetime picker**  
+  Run 
+  ```
+  npm install @mui/material @emotion/react @emotion/styled
+  npm install @material-ui/pickers
+  ```
 
 ## Usage
 - The application initially directs the user to a login page, with an option to create a username and password for new users. If you do not run `rails db:seed` to populate with the provided seed file, you can create your own username at this time.  
