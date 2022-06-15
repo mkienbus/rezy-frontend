@@ -1,6 +1,6 @@
 # Rezy App
 ## Description:
-This application is meant to be a demonstration of the skills I have learned so far in my programming course. It utilizes a PostgreSQL database, Ruby on Rails backend, and the React framework for the frontend. My focus on this application was the functionality between the back and front ends, without a heavy focus on the front/styling.  
+This application is meant to be a demonstration of the skills I learned in my programming course. It utilizes a PostgreSQL database, Ruby on Rails backend, and the React framework for the frontend. I am currently working on implementing more MUI tools, such as the calendar. My focus on this application was the functionality between the back and front ends. 
 ## Requirements:  
 | Requirement | Version |
 | --- | --- |
@@ -36,9 +36,8 @@ This application is meant to be a demonstration of the skills I have learned so 
 - The application initially directs the user to a login page, with an option to create a username for new users. If you do not run `rails db:seed` to populate with the provided seed file, you can create your own username at this time.  
   
 ![login](./images/login.png)  
-##### (note: there is no password authentication on this application)
 
-- After logging in or creating a username to login with, you are directed to the home page which renders a list of all your restaurants and their attributes.  
+- After logging in or creating a username/password to login with, you are directed to the home page which renders a list of all your restaurants and their attributes.  
   
 ![home](./images/home.png)  
 - The home page also has a navigation bar and logout button at the top. You can also edit information on the rendered items in your list.  
