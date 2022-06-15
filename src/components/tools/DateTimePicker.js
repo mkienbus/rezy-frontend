@@ -14,12 +14,12 @@ function MUIDateTimePicker({callBackDateTime}){
             <DateTimePicker
                 renderInput={(props) => <TextField {...props} />}
                 label="Select calendar, or edit"
+                format="MM-DD-YYYY"
                 value={value}
                 onChange={(newValue) => {
                 setValue(newValue);
                 callBackDateTime(newValue)
                 }}
-                format="MM-DD-YYYY"
             />
     </LocalizationProvider>
     );
