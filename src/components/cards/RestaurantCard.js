@@ -45,7 +45,5 @@ function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
 
 export default RestaurantCard;
 
-{/* <p>Favorite? {restaurant.favorite ? "Yes" : "No"} </p>
-<input type = "checkbox" className = "favorite" value = {favorite} checked = {favorite} onChange = {handleChange}/> */}
 
 // /restaurants/${restaurant.id}
