@@ -9,7 +9,7 @@ function Nav(){
 
     return(
 
-        <nav>
+        <nav id="navbar">
             <Link to = "/">HOME  |</Link>
             {/* <Link to = "/restaurants">  RESTAURANTS  |</Link> */}
             <Link to = "/reservations">  RESERVATIONS  |</Link>
