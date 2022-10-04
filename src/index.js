@@ -13,7 +13,7 @@ import About from './components/About';
 import './index.css';
 
 //import 'bootstrap/dist/css/bootstrap.css';
-import { BrowserRouter as Router } from 'react-router-dom'
+// import { BrowserRouter as Router } from 'react-router-dom'
 //import { PersistGate } from 'redux-persist/integration/react'
 
 ReactDOM.render(

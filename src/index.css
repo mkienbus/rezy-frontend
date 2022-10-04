@@ -33,3 +33,7 @@ code {
 #favoritesContainer{
   margin: 20px 40% 100% 40%;
 }
+
+.logoutButton{
+  color:rgb(140, 140, 140);
+}
