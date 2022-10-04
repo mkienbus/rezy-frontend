@@ -34,7 +34,7 @@ function LoginForm({setUser}){
     return(
         <>
         <div id = "welcomeContainer">
-            <h1 id="welcome">Welcome to Rezy</h1>
+            <h1>Welcome to Rezy</h1>
             <div id = "login">
                 <h4>Login to your account</h4>
                 <form onSubmit = {handleSubmit}>

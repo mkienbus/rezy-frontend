@@ -21,3 +21,7 @@ code {
   cursor: pointer;
   text-decoration: none;
 }
+
+#welcomeContainer{
+  margin: 20px 40% 100% 40%;
+}
