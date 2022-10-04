@@ -24,11 +24,13 @@ function Favorites(){
 
     return(
         <>
-        <Nav />
-        <h3>Your favorite restaurants:</h3>
-        {favorites.map((d) => 
-        <FavoriteCard key = {d.id} favorites = {d} resetDomRemove = {resetDomRemove}/>
-        )}
+        <div id = "favoritesContainer">
+            <Nav />
+            <h3>Your favorite restaurants:</h3>
+            {favorites.map((d) => 
+            <FavoriteCard key = {d.id} favorites = {d} resetDomRemove = {resetDomRemove}/>
+            )}
+        </div>
         </>
     )
 }
