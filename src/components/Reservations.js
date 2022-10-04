@@ -22,7 +22,7 @@ function Reservations(){
 
     return(
         <>
-        <div>
+        <div id="reservationsContainer">
             <Nav />
             <h3>Your reservations:</h3>
             {reservation.map((data => 
