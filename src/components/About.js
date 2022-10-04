@@ -2,8 +2,6 @@ import React from 'react';
 import Nav from './tools/Nav';
 function About(){
 
-    //links to external sites are injecting localhost proxy
-
     return(
         <div>
             <Nav />
