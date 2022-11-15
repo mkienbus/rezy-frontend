@@ -35,7 +35,7 @@ function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
                     {restaurant.address}
                     <br></br>
                     <ReservationModal restaurant = {restaurant} user = {user} />
-                    <Button size = "small" variant = "contained" onClick={handleClick}>Add {restaurant.name} to favorites</Button>
+                    <Button className = "add-favorites-button" size = "small" variant = "contained" onClick={handleClick}>Add {restaurant.name} to favorites</Button>
                     <br></br><br></br>
                 </div>}
             </div>

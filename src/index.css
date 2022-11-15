@@ -37,3 +37,7 @@ code {
 .logoutButton{
   color:rgb(140, 140, 140);
 }
+
+.add-favorites-button{
+  margin-top: 10px;
+}
