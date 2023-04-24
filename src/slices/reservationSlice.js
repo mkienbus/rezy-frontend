@@ -1,9 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-// const initialState = {
-//     reservation: [],
-//   }
-
   export const reservationReducer = createSlice({
     name: 'reservation',
     initialState: { 

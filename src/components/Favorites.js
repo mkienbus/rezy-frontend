@@ -6,8 +6,6 @@ import FavoriteCard from './cards/FavoriteCard'
 
 function Favorites(){
 
-    // const { data, error, isLoading, isSuccess } = useGetAllFavoritesQuery();
-
     const [favorites, setFavorites] = useState([])
 
     useEffect(() => {
