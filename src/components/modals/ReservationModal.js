@@ -71,7 +71,7 @@ function ReservationModal({user, restaurant}) {
 
   
     return (
-      <div>
+      <div className = "Reservation-button">
         {error ? <span>{error}</span> : <span></span>}
         <Button size = "small" variant = "contained" onClick={handleOpen}>Make a reservation at {restaurant.name}</Button>
         <Modal

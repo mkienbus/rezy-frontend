@@ -25,11 +25,11 @@ function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
 
     return(
         <>
-            <div className = "Restaurant-card">
+            <div>
                 {isLoading && <h2>...loading</h2>}
                 {error && <h2>Something went wrong</h2>}
                 {isSuccess &&
-                <div>
+                <div className = "Restaurant-card">
                     {restaurant.name}
                     <br></br>
                     {restaurant.address}
