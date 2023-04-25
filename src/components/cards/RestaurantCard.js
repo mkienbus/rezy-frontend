@@ -25,7 +25,7 @@ function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
 
     return(
         <>
-            <div>
+            <div className = "Restaurant-card">
                 {isLoading && <h2>...loading</h2>}
                 {error && <h2>Something went wrong</h2>}
                 {isSuccess &&
@@ -36,7 +36,6 @@ function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
                     <br></br>
                     <ReservationModal restaurant = {restaurant} user = {user} />
                     <Button className = "add-favorites-button" size = "small" variant = "contained" onClick={handleClick}>Add {restaurant.name} to favorites</Button>
-                    <br></br><br></br>
                 </div>}
             </div>
         </>
@@ -44,6 +43,3 @@ function RestaurantCard({user, restaurant, error, isLoading, isSuccess}){
 }
 
 export default RestaurantCard;
-
-
-// /restaurants/${restaurant.id}
